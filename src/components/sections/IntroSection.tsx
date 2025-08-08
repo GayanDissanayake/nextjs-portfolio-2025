@@ -39,7 +39,7 @@ export default function IntroSection({ scrollToSection }: IntroSectionProps) {
             <div className="w-1 h-3 bg-beige-accent rounded-full mt-2 animate-pulse"></div>
           </div> */}
           <svg
-            className="w-6 h-6 text-beige-accent mt-4 animate-bounce group-hover:text-beige transition-colors"
+            className="w-6 h-6 text-beige-accent mt-2 animate-bounce group-hover:text-beige transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

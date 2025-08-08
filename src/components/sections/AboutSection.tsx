@@ -12,7 +12,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center px-4 lg:px-8 py-20"
+      className="min-h-screen flex items-center px-4 lg:px-8 pt-5 pb-20"
     >
       {" "}
       <div className="max-w-4xl mx-auto w-full">
