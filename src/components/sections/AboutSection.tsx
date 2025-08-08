@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const skills = [
   "JavaScript (ES6+)",
   "TypeScript",
@@ -71,9 +73,18 @@ export default function AboutSection() {
               {" "}
               <div className="relative">
                 {" "}
-                <div className="w-64 h-64 bg-beige-accent/20 rounded-lg flex items-center justify-center">
+                <div className="w-64 h-64 rounded-lg overflow-hidden">
                   {" "}
-                  <span className="text-beige-accent text-6xl">👨‍💻</span>{" "}
+                  <Image
+                    src="/images/profile/profile-photo.jpg"
+                    alt="Gayan Dissanayake"
+                    width={256}
+                    height={256}
+                    className="w-full h-full object-cover filter hover:filter-none transition-all duration-300"
+                    style={{
+                      filter: "sepia(100%) hue-rotate(25deg) saturate(0.8)",
+                    }}
+                  />
                 </div>{" "}
                 <div className="absolute inset-0 border-2 border-beige-accent rounded-lg transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>{" "}
               </div>{" "}
