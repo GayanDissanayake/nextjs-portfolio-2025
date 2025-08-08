@@ -1,56 +1,177 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Sidebar from "@/components/Sidebar";
+import IntroSection from "@/components/sections/IntroSection";
+import AboutSection from "@/components/sections/AboutSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactSection from "@/components/sections/ContactSection";
+
 export default function Home() {
+  const [activeSection, setActiveSection] = useState<string>("intro");
+  const [showMainContent, setShowMainContent] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["intro", "about", "experience", "projects", "contact"];
+      const scrollPosition = window.scrollY + window.innerHeight * 0.3;
+
+      // Show main content after scrolling down from intro section
+      if (window.scrollY > window.innerHeight * 0.7 && !showMainContent) {
+        setShowMainContent(true);
+      } else if (
+        window.scrollY <= window.innerHeight * 0.3 &&
+        showMainContent
+      ) {
+        setShowMainContent(false);
+      }
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial call
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showMainContent]);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="bg-navy min-h-screen font-sans flex items-center justify-center p-8">
-      <div className="max-w-4xl mx-auto text-center space-y-8">
-        {/* Main heading */}
-        <h1 className="text-6xl md:text-7xl font-bold text-beige mb-4">
-          Gayan Dissanayake
-        </h1>
-        
-        {/* Subtitle */}
-        <h2 className="text-2xl md:text-3xl font-medium text-beige-accent mb-8">
-          Full Stack Developer
-        </h2>
-        
-        {/* Description */}
-        <p className="text-lg md:text-xl text-beige leading-relaxed max-w-2xl mx-auto mb-12">
-          I&apos;m a passionate developer creating modern web experiences with React, Next.js, and TypeScript. 
-          I love building user-friendly applications that solve real-world problems.
-        </p>
-        
-        {/* Code snippet showcase */}
-        <div className="bg-navy-light p-6 rounded-lg shadow-2xl max-w-2xl mx-auto mb-12">
-          <code className="bg-code text-green-luminous font-mono text-sm md:text-base block p-4 rounded">
-            <div className="text-green-300">{`// Welcome to my portfolio`}</div>
-            <div>const developer = &#123;</div>
-            <div>&nbsp;&nbsp;name: &apos;Gayan Dissanayake&apos;,</div>
-            <div>&nbsp;&nbsp;role: &apos;Full Stack Developer&apos;,</div>
-            <div>&nbsp;&nbsp;skills: [&apos;React&apos;, &apos;Next.js&apos;, &apos;TypeScript&apos;],</div>
-            <div>&nbsp;&nbsp;passion: &apos;Building amazing user experiences&apos;</div>
-            <div>&#125;;</div>
-          </code>
-        </div>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="btn-primary">
-            View My Work
-          </button>
-          <button className="border-2 border-beige-accent text-beige-accent px-6 py-3 rounded-lg font-medium hover:bg-beige-accent hover:text-navy transition-all duration-200">
-            Get In Touch
-          </button>
-        </div>
-        
-        {/* Quick navigation to font preview */}
-        <div className="mt-16 pt-8 border-t border-gray-700">
-          <a 
-            href="/font-preview" 
-            className="text-beige-accent hover:text-beige transition-colors text-sm"
+    <div className="min-h-screen bg-navy text-white">
+      {/* Mobile Navigation Header - Only visible on small screens */}
+      <div className="lg:hidden fixed top-0 left-0 right-0 bg-navy-light/95 backdrop-blur-sm border-b border-gray-800 z-50">
+        <div className="flex items-center justify-between p-4">
+          <button
+            onClick={() => scrollToSection("intro")}
+            className="text-beige font-bold text-lg"
           >
-            → View Theme Preview
-          </a>
+            Gayan Dissanayake
+          </button>
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-beige hover:text-beige-accent transition-colors"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
         </div>
+
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="bg-navy-light border-t border-gray-800">
+            <nav className="p-4 space-y-4">
+              {[
+                { id: "about", label: "About", number: "01" },
+                { id: "experience", label: "Experience", number: "02" },
+                { id: "projects", label: "Projects", number: "03" },
+                { id: "contact", label: "Contact", number: "04" },
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`flex items-center w-full text-left transition-colors ${
+                    activeSection === item.id
+                      ? "text-beige-accent"
+                      : "text-gray-400 hover:text-beige"
+                  }`}
+                >
+                  <span className="text-xs font-mono mr-3">{item.number}.</span>
+                  <span className="text-sm font-medium">{item.label}</span>
+                </button>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
+
+      {/* Desktop Left Sidebar - Only visible on large screens and when showMainContent is true */}
+      <div className="hidden lg:block">
+        <Sidebar
+          showMainContent={showMainContent}
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+        />
+      </div>
+
+      {/* Main Content */}
+      <div
+        className={`transition-all duration-500 ${
+          showMainContent ? "lg:ml-80" : "lg:ml-0"
+        } ${isMobileMenuOpen ? "pt-32" : "pt-16"} lg:pt-0`}
+      >
+        <IntroSection scrollToSection={scrollToSection} />
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <ContactSection />
+      </div>
+
+      {/* Floating Scroll to Top Button */}
+      {showMainContent && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 lg:bottom-6 lg:right-6 z-40 w-12 h-12 bg-beige-accent text-navy rounded-full shadow-lg hover:bg-beige-accent/90 transition-all duration-300 transform hover:scale-110 flex items-center justify-center group"
+          aria-label="Scroll to top"
+        >
+          <svg
+            className="w-5 h-5 transform group-hover:-translate-y-0.5 transition-transform text-beige-accent animate-bounce group-hover:text-beige"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }

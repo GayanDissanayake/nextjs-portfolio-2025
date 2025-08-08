@@ -6,11 +6,11 @@
   --foreground: #fef7ed; /* Beige text (amber-50) */
   --accent: #fbbf24; /* Beige accent (amber-400) */
   --muted: #f3e8c7; /* Lighter beige (amber-100) */
-  
+
   /* Code theme - Navy + Luminous Green */
   --code-bg: #1e293b; /* Darker navy for code blocks (slate-800) */
   --code-text: #4ade80; /* Luminous green for code (green-400) */
-  
+
   /* Font variables */
   --font-sans: var(--font-montserrat);
   --font-mono: var(--font-jetbrains-mono);
@@ -24,7 +24,8 @@ body {
 }
 
 /* Code styling */
-code, pre {
+code,
+pre {
   background: var(--code-bg);
   color: var(--code-text);
   font-family: var(--font-mono), monospace;
@@ -33,28 +34,28 @@ code, pre {
 }
 
 /* Custom utility classes for your theme */
-.text-beige { 
-  color: #fef7ed; 
+.text-beige {
+  color: #fef7ed;
 }
 
-.text-beige-accent { 
-  color: #fbbf24; 
+.text-beige-accent {
+  color: #fbbf24;
 }
 
-.text-green-luminous { 
-  color: #4ade80; 
+.text-green-luminous {
+  color: #4ade80;
 }
 
-.bg-navy { 
-  background-color: #0f172a; 
+.bg-navy {
+  background-color: #0f172a;
 }
 
-.bg-navy-light { 
-  background-color: #1e293b; 
+.bg-navy-light {
+  background-color: #1e293b;
 }
 
-.bg-code { 
-  background-color: #1e293b; 
+.bg-code {
+  background-color: #1e293b;
   color: #4ade80;
 }
 
@@ -76,4 +77,82 @@ code, pre {
   background-color: #f59e0b;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Intersection Observer animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Backdrop blur support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fbbf24;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Section spacing */
+section {
+  scroll-margin-top: 80px;
 }
