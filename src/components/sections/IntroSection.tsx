@@ -1,8 +1,17 @@
-interface IntroSectionProps {
-  scrollToSection: (sectionId: string) => void;
-}
+export default function IntroSection() {
+  const scrollToAbout = () => {
+    const aboutElement = document.getElementById("about");
+    if (aboutElement) {
+      // For mobile, use less offset to avoid scrolling past content
+      const isMobile = window.innerWidth < 768;
+      const offsetPosition = aboutElement.offsetTop - (isMobile ? 60 : 0);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
-export default function IntroSection({ scrollToSection }: IntroSectionProps) {
   return (
     <section
       id="intro"
@@ -30,24 +39,22 @@ export default function IntroSection({ scrollToSection }: IntroSectionProps) {
 
       {/* Scroll Down Button */}
       <button
-        onClick={() => scrollToSection("about")}
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-fade-in-up animation-delay-800 group"
+        onClick={scrollToAbout}
+        className="absolute bottom-30 md:bottom-20 left-1/2 transform -translate-x-1/2 animate-fade-in-up animation-delay-800 group z-10"
       >
-        <div className="flex flex-col items-center space-y-2">
-          {/* <span className="text-beige-accent text-sm font-mono mb-4">scroll down</span> */}
-          {/* <div className="w-6 h-10 border-2 border-beige-accent rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-beige-accent rounded-full mt-2 animate-pulse"></div>
-          </div> */}
+        <div className="relative p-2">
+          {/* Background circle for better visibility on mobile */}
+          <div className="absolute inset-0 bg-navy/70 rounded-full blur-md scale-125 md:hidden"></div>
           <svg
-            className="w-6 h-6 text-beige-accent mt-2 animate-bounce group-hover:text-beige transition-colors"
+            className="relative w-10 h-10 md:w-8 md:h-8 text-beige-accent animate-bounce group-hover:text-beige transition-colors"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
+            strokeWidth={3}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              strokeWidth={2}
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>

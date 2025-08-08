@@ -143,7 +143,7 @@ export default function Home() {
           showMainContent ? "lg:ml-80" : "lg:ml-0"
         } ${isMobileMenuOpen ? "pt-32" : "pt-16"} lg:pt-0`}
       >
-        <IntroSection scrollToSection={scrollToSection} />
+        <IntroSection />
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
