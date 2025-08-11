@@ -1,3 +1,7 @@
+"use client";
+
+import ScrollAnimation from "../ScrollAnimation";
+
 const experiences = [
   {
     title: "Full Stack Developer",
@@ -79,107 +83,109 @@ export default function ExperienceSection() {
       className="min-h-screen flex items-center px-4 lg:px-8 py-20"
     >
       <div className="max-w-6xl mx-auto w-full">
-        <div className="flex items-center mb-16">
-          <span className="text-beige-accent font-mono text-lg mr-4">03.</span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige">
-            Where I&apos;ve Worked
-          </h2>
-          <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>
-        </div>
+        <ScrollAnimation direction="up" delay={0.1}>
+          <div className="flex items-center mb-16">
+            <span className="text-beige-accent font-mono text-lg mr-4">
+              03.
+            </span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige">
+              Where I&apos;ve Worked
+            </h2>
+            <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>
+          </div>
+        </ScrollAnimation>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {experiences.map((experience, index) => (
-            <div
-              key={index}
-              className="bg-navy-light/50 border border-gray-700 rounded-xl p-6 transition-all duration-300 group safe-hover hover:border-beige-accent/50 hover:bg-navy-light/70 hover:shadow-lg hover:shadow-beige-accent/10"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Company Header */}
-              <div className="mb-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xl font-bold text-beige group-hover:text-beige-accent transition-colors">
-                    {experience.title}
-                  </h3>
-                  <span className="text-xs font-mono text-beige-accent bg-beige-accent/10 px-2 py-1 rounded-full">
-                    {experience.type}
-                  </span>
-                </div>
-                <h4 className="text-lg font-semibold text-beige-accent mb-1">
-                  {experience.company}
-                </h4>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400 font-mono text-sm">
-                  <span>{experience.period}</span>
-                  <span className="hidden sm:inline">•</span>
-                  <span>{experience.location}</span>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                {experience.description}
-              </p>
-
-              {/* Key Responsibilities */}
-              <div className="mb-6">
-                <h5 className="text-beige font-semibold text-sm mb-3">
-                  Key Responsibilities:
-                </h5>
-                <ul className="space-y-2">
-                  {experience.responsibilities
-                    .slice(0, 3)
-                    .map((item, itemIndex) => (
-                      <li
-                        key={itemIndex}
-                        className="flex items-start text-gray-300 text-sm"
-                      >
-                        <span className="text-beige-accent mr-2 mt-1 font-mono text-xs">
-                          ▹
-                        </span>
-                        <span className="leading-relaxed">{item}</span>
-                      </li>
-                    ))}
-                </ul>
-              </div>
-
-              {/* Technologies */}
-              <div className="mb-6">
-                <h5 className="text-beige font-semibold text-sm mb-3">
-                  Technologies:
-                </h5>
-                <div className="flex flex-wrap gap-2">
-                  {experience.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-beige-accent/10 text-beige-accent text-xs px-2 py-1 rounded-md font-mono"
-                    >
-                      {tech}
+            <ScrollAnimation key={index} direction="up" delay={index * 0.1}>
+              <div className="bg-navy-light/50 border border-gray-700 rounded-xl p-6 transition-all duration-300 group safe-hover hover:border-beige-accent/50 hover:bg-navy-light/70 hover:shadow-lg hover:shadow-beige-accent/10 h-full min-h-[600px] flex flex-col">
+                {/* Company Header */}
+                <div className="mb-6">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-bold text-beige group-hover:text-beige-accent transition-colors">
+                      {experience.title}
+                    </h3>
+                    <span className="text-xs font-mono text-beige-accent bg-beige-accent/10 px-2 py-1 rounded-full">
+                      {experience.type}
                     </span>
-                  ))}
+                  </div>
+                  <h4 className="text-lg font-semibold text-beige-accent mb-1">
+                    {experience.company}
+                  </h4>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400 font-mono text-sm">
+                    <span>{experience.period}</span>
+                    <span className="hidden sm:inline">•</span>
+                    <span>{experience.location}</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  {experience.description}
+                </p>
+
+                {/* Key Responsibilities */}
+                <div className="mb-6 flex-1">
+                  <h5 className="text-beige font-semibold text-sm mb-3">
+                    Key Responsibilities:
+                  </h5>
+                  <ul className="space-y-2">
+                    {experience.responsibilities
+                      .slice(0, 3)
+                      .map((item, itemIndex) => (
+                        <li
+                          key={itemIndex}
+                          className="flex items-start text-gray-300 text-sm"
+                        >
+                          <span className="text-beige-accent mr-2 mt-1 font-mono text-xs">
+                            ▹
+                          </span>
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div className="mb-6">
+                  <h5 className="text-beige font-semibold text-sm mb-3">
+                    Technologies:
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {experience.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="bg-beige-accent/10 text-beige-accent text-xs px-2 py-1 rounded-md font-mono"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Achievements */}
+                <div className="mt-auto">
+                  <h5 className="text-beige font-semibold text-sm mb-3">
+                    Key Achievements:
+                  </h5>
+                  <ul className="space-y-1">
+                    {experience.achievements.map(
+                      (achievement, achievementIndex) => (
+                        <li
+                          key={achievementIndex}
+                          className="flex items-start text-gray-300 text-sm"
+                        >
+                          <span className="text-green-400 mr-2 mt-1 text-xs">
+                            ✓
+                          </span>
+                          <span className="leading-relaxed">{achievement}</span>
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
               </div>
-
-              {/* Achievements */}
-              <div>
-                <h5 className="text-beige font-semibold text-sm mb-3">
-                  Key Achievements:
-                </h5>
-                <ul className="space-y-1">
-                  {experience.achievements.map(
-                    (achievement, achievementIndex) => (
-                      <li
-                        key={achievementIndex}
-                        className="flex items-start text-gray-300 text-sm"
-                      >
-                        <span className="text-green-400 mr-2 mt-1 text-xs">
-                          ✓
-                        </span>
-                        <span className="leading-relaxed">{achievement}</span>
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
-            </div>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

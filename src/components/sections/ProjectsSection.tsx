@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ScrollAnimation from "../ScrollAnimation";
 
 interface Project {
   title: string;
@@ -111,13 +112,17 @@ export default function ProjectsSection() {
       className="min-h-screen flex items-center px-4 lg:px-8 py-20"
     >
       <div className="max-w-6xl mx-auto w-full">
-        <div className="flex items-center mb-16">
-          <span className="text-beige-accent font-mono text-lg mr-4">04.</span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige">
-            Projects I&apos;ve Worked On
-          </h2>
-          <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>
-        </div>
+        <ScrollAnimation direction="up" delay={0.1}>
+          <div className="flex items-center mb-16">
+            <span className="text-beige-accent font-mono text-lg mr-4">
+              04.
+            </span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige">
+              Projects I&apos;ve Worked On
+            </h2>
+            <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>
+          </div>
+        </ScrollAnimation>
 
         {/* Carousel Container */}
         <div className="relative">
