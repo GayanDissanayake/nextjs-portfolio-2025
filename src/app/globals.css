@@ -257,3 +257,81 @@ section {
   -webkit-text-fill-color: transparent;
   animation: text-shimmer 3s linear infinite;
 }
+
+/* 3D CSS Transform Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-500 {
+  perspective: 500px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.rotate-x-12 {
+  transform: rotateX(12deg);
+}
+
+.translate-z-50 {
+  transform: translateZ(50px);
+}
+
+/* 3D Hover Effects */
+.hover-lift-3d {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift-3d:hover {
+  transform: translateY(-10px) translateZ(20px) rotateX(5deg);
+}
+
+.hover-tilt-3d {
+  transition: transform 0.3s ease;
+}
+
+.hover-tilt-3d:hover {
+  transform: rotateX(10deg) rotateY(10deg) translateZ(20px);
+}
+
+/* Floating Animation */
+@keyframes float-3d {
+  0%,
+  100% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(5deg);
+  }
+}
+
+.animate-float-3d {
+  animation: float-3d 6s ease-in-out infinite;
+}
+
+/* Parallax Layers */
+.parallax-layer {
+  transform-style: preserve-3d;
+}
+
+.parallax-back {
+  transform: translateZ(-100px) scale(1.1);
+}
+
+.parallax-mid {
+  transform: translateZ(-50px) scale(1.05);
+}
+
+.parallax-front {
+  transform: translateZ(0px);
+}

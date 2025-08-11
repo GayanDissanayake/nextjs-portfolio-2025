@@ -47,29 +47,6 @@ const techCategories = [
   },
 ];
 
-const experience = [
-  {
-    title: "Full-Stack Development",
-    duration: "3+ years",
-    highlight: "End-to-end web applications",
-    description:
-      "Building complete solutions from database design to user interface",
-  },
-  {
-    title: "Modern Frameworks",
-    duration: "2+ years",
-    highlight: "React & Next.js ecosystem",
-    description:
-      "Creating performant, SEO-friendly applications with modern tools",
-  },
-  {
-    title: "Cloud Architecture",
-    duration: "2+ years",
-    highlight: "AWS & Serverless",
-    description: "Designing scalable, cost-effective cloud solutions",
-  },
-];
-
 export default function TechnicalSection() {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 

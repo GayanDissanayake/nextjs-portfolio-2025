@@ -3,10 +3,25 @@ import { useState } from "react";
 
 const personalStories = [
   {
-    id: "travel-map",
-    title: "🗺️ My Interactive Travel Map",
-    description: "Places I've been, dreams I'm chasing",
-    icon: "🌍",
+    id: "enhanced-3d-about-me",
+    title: "🌟 Enhanced 3D About Me",
+    description:
+      "Immersive 3D experience with my character, pet, and interactive story objects",
+    icon: "🎮",
+    coming: false,
+  },
+  {
+    id: "advanced-3d",
+    title: "🎮 Advanced 3D Showcase",
+    description: "Three.js experiments and interactive experiences",
+    icon: "✨",
+    coming: false,
+  },
+  {
+    id: "travel",
+    title: "🌍 Travel Adventures",
+    description: "Places I've been, cultures I've experienced",
+    icon: "✈️",
     coming: false,
   },
   {
@@ -50,8 +65,11 @@ export default function AboutSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const handleCardClick = (id: string) => {
-    if (id === "travel-map") {
-      // Navigate to the travel map page in the same tab
+    if (id === "advanced-3d") {
+      // Navigate to the advanced 3D showcase
+      window.location.href = "/advanced-3d";
+    } else if (id === "travel") {
+      // Navigate to the interactive travel map
       window.location.href = "/travel-map";
     } else {
       // For other sections, show coming soon message
