@@ -3,11 +3,11 @@ import { useState } from "react";
 
 const personalStories = [
   {
-    id: "world-map",
-    title: "🗺️ My Interactive World Map",
+    id: "travel-map",
+    title: "🗺️ My Interactive Travel Map",
     description: "Places I've been, dreams I'm chasing",
     icon: "🌍",
-    coming: true,
+    coming: false,
   },
   {
     id: "education",
@@ -50,9 +50,9 @@ export default function AboutSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const handleCardClick = (id: string) => {
-    if (id === "world-map") {
-      // Navigate to the world map page in the same tab
-      window.location.href = "/world-map";
+    if (id === "travel-map") {
+      // Navigate to the travel map page in the same tab
+      window.location.href = "/travel-map";
     } else {
       // For other sections, show coming soon message
       alert(
