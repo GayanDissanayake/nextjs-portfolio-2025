@@ -8,6 +8,7 @@ import TechnicalSection from "@/components/sections/TechnicalSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import BubbleCursor from "@/components/BubbleCursor";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>("intro");
@@ -70,6 +71,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-navy text-white">
+      <BubbleCursor />
       {/* Mobile Navigation Header - Only visible on small screens */}
       <div className="lg:hidden fixed top-0 left-0 right-0 bg-navy-light/95 backdrop-blur-sm border-b border-gray-800 z-50">
         <div className="flex items-center justify-between p-4">
