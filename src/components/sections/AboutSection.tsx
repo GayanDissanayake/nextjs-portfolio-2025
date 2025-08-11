@@ -1,97 +1,192 @@
 import Image from "next/image";
+import { useState } from "react";
 
-const skills = [
-  "JavaScript (ES6+)",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Python",
-  "PostgreSQL",
-  "AWS",
+const personalStories = [
+  {
+    id: "world-map",
+    title: "🗺️ My Interactive World Map",
+    description: "Places I've been, dreams I'm chasing",
+    icon: "🌍",
+    coming: true,
+  },
+  {
+    id: "education",
+    title: "🎓 School & Learning Journey",
+    description: "From curious student to lifelong learner",
+    icon: "📚",
+    coming: true,
+  },
+  {
+    id: "hobbies",
+    title: "🎨 Hobbies & Passions",
+    description: "What I do when I'm not coding",
+    icon: "🎯",
+    coming: true,
+  },
+  {
+    id: "pet",
+    title: "🐾 My Furry Friend",
+    description: "Meet my coding companion",
+    icon: "🐕",
+    coming: true,
+  },
+  {
+    id: "food",
+    title: "🍜 Food Adventures",
+    description: "Culinary experiments and favorite dishes",
+    icon: "👨‍🍳",
+    coming: true,
+  },
+  {
+    id: "experiences",
+    title: "✈️ Life Experiences",
+    description: "Stories that shaped who I am",
+    icon: "🌟",
+    coming: true,
+  },
 ];
+
 export default function AboutSection() {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+
+  const handleCardClick = (id: string) => {
+    // For now, we'll show a coming soon message
+    // Later these will navigate to actual pages/sections
+    alert(
+      `Coming soon! This will take you to: ${
+        personalStories.find((story) => story.id === id)?.title
+      }`
+    );
+  };
+
   return (
     <section
       id="about"
       className="min-h-screen flex items-center px-4 lg:px-8 pt-5 pb-20"
     >
-      {" "}
-      <div className="max-w-4xl mx-auto w-full">
-        {" "}
+      <div className="max-w-6xl mx-auto w-full">
+        {/* Section Header */}
         <div className="flex items-center mb-16">
-          {" "}
-          <span className="text-beige-accent font-mono text-lg mr-4">
-            01.
-          </span>{" "}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige">
-            About Me
-          </h2>{" "}
-          <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>{" "}
-        </div>{" "}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-          {" "}
-          <div className="lg:col-span-2">
-            {" "}
-            <div className="text-gray-300 space-y-4 mb-8">
-              {" "}
-              <p>
-                {" "}
-                Hello! I&apos;m Gayan, a full-stack developer based in New
-                Zealand who enjoys creating things that live on the internet. My
-                interest in web development started back when I decided to try
-                editing custom themes — turns out hacking together HTML & CSS
-                taught me a lot about web development!{" "}
-              </p>{" "}
-              <p>
-                {" "}
-                Fast-forward to today, and I&apos;ve had the privilege of
-                working on various projects ranging from small business websites
-                to large-scale applications. My main focus these days is
-                building accessible, inclusive products and digital experiences
-                for users.{" "}
-              </p>{" "}
-              <p>
-                {" "}
-                Here are a few technologies I&apos;ve been working with
-                recently:{" "}
-              </p>{" "}
-            </div>{" "}
-            <div className="grid grid-cols-2 gap-2 font-mono text-sm text-gray-300">
-              {" "}
-              {skills.map((skill, index) => (
-                <div key={index} className="flex items-center">
-                  {" "}
-                  <span className="text-beige-accent mr-2">▹</span> {skill}{" "}
-                </div>
-              ))}{" "}
-            </div>{" "}
-          </div>{" "}
+          <span className="text-beige-accent font-mono text-lg mr-4">01.</span>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige text-shimmer">
+            About Me - The Human Side
+          </h2>
+          <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Personal Story */}
+          <div className="space-y-6">
+            <div className="text-gray-300 space-y-4">
+              <p className="text-lg leading-relaxed">
+                Hello! I&apos;m Gayan - not just a developer, but a curious soul
+                who believes that the best code comes from understanding people,
+                places, and experiences beyond the screen.
+              </p>
+              <p className="text-lg leading-relaxed">
+                When I&apos;m not crafting digital experiences, you&apos;ll find
+                me exploring new places (ask me about my travel stories!),
+                experimenting in the kitchen, or spending quality time with my
+                furry coding companion who&apos;s always ready to
+                &quot;debug&quot; my work with enthusiastic tail wags.
+              </p>
+              <p className="text-lg leading-relaxed">
+                I believe that great technology should tell human stories. Every
+                project I work on is influenced by the diverse experiences
+                I&apos;ve collected - from different cultures I&apos;ve
+                encountered to the simple joy of a perfectly brewed cup of
+                coffee during a late-night coding session.
+              </p>
+            </div>
+          </div>
+
+          {/* Profile Image with Fun Twist */}
           <div className="lg:col-span-1">
-            {" "}
-            <div className="relative group max-w-xs mx-auto lg:mx-0">
-              {" "}
+            <div className="relative group max-w-sm mx-auto lg:mx-0">
               <div className="relative">
-                {" "}
-                <div className="w-64 h-64 rounded-lg overflow-hidden">
-                  {" "}
+                <div className="w-80 h-80 rounded-2xl overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                   <Image
-                    src="/images/profile/profile-photo.jpg"
-                    alt="Gayan Dissanayake"
-                    width={256}
-                    height={256}
-                    className="w-full h-full object-cover filter hover:filter-none transition-all duration-300"
-                    style={{
-                      filter: "sepia(100%) hue-rotate(25deg) saturate(0.8)",
-                    }}
+                    src="/images/profile/beach.jpeg"
+                    alt="Gayan Dissanayake - The person behind the code"
+                    width={320}
+                    height={320}
+                    className="w-full h-full object-cover"
                   />
-                </div>{" "}
-                <div className="absolute inset-0 border-2 border-beige-accent rounded-lg transform translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300"></div>{" "}
-              </div>{" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
-      </div>{" "}
+                  {/* Fun overlay on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-beige text-sm font-mono">
+                      📍 Somewhere awesome in New Zealand
+                    </p>
+                  </div>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-beige-accent rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-green-400/20 rounded-full animate-pulse animation-delay-200"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Story Cards */}
+        <div className="mb-8">
+          <h3 className="text-xl md:text-2xl font-bold text-beige mb-8 text-center">
+            Explore Different Facets of My Life
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {personalStories.map((story) => (
+              <div
+                key={story.id}
+                className={`relative p-6 rounded-xl border border-gray-700 bg-navy-light/50 backdrop-blur-sm cursor-pointer transition-all duration-300 group card-hover stagger-animation ${
+                  hoveredCard === story.id
+                    ? "border-beige-accent/50 shadow-lg shadow-beige-accent/10"
+                    : "hover:border-gray-600"
+                }`}
+                onMouseEnter={() => setHoveredCard(story.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+                onClick={() => handleCardClick(story.id)}
+              >
+                {/* Coming Soon Badge */}
+                {story.coming && (
+                  <div className="absolute top-2 right-2 bg-beige-accent text-navy text-xs px-2 py-1 rounded-full font-mono">
+                    Coming Soon
+                  </div>
+                )}
+
+                <div className="flex items-start space-x-4">
+                  <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
+                    {story.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="font-bold text-beige mb-2 group-hover:text-beige-accent transition-colors">
+                      {story.title}
+                    </h4>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      {story.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Hover effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-beige-accent/5 to-green-400/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <p className="text-gray-400 mb-6">
+            Want to know more about any of these? Click the cards above, or
+            let&apos;s chat about it in an interview!
+          </p>
+          <div className="inline-flex items-center space-x-2 text-beige-accent font-mono text-sm">
+            <span>💡</span>
+            <span>
+              Pro tip: Each section will be interactive and tell a unique story
+            </span>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -23,7 +23,7 @@ export default function IntroSection() {
       <div className="flex-shrink-0 order-1 lg:order-2 animate-fade-in-up animation-delay-200">
         <div className="relative">
           <Image
-            src="/images/profile/image.png"
+            src="/images/profile/beach.jpeg"
             alt="Gayan Dissanayake"
             width={300}
             height={300}

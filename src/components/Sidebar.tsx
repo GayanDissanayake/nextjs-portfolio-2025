@@ -5,10 +5,11 @@ interface SidebarProps {
 }
 
 const navItems = [
-  { id: "about", label: "About", number: "01" },
-  { id: "experience", label: "Experience", number: "02" },
-  { id: "projects", label: "Projects", number: "03" },
-  { id: "contact", label: "Contact", number: "04" },
+  { id: "about", label: "About Me", number: "01" },
+  { id: "technical", label: "Technical", number: "02" },
+  { id: "experience", label: "Experience", number: "03" },
+  { id: "projects", label: "Projects", number: "04" },
+  { id: "contact", label: "Contact", number: "05" },
 ];
 
 export default function Sidebar({

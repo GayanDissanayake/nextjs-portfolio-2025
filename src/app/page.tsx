@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import IntroSection from "@/components/sections/IntroSection";
 import AboutSection from "@/components/sections/AboutSection";
+import TechnicalSection from "@/components/sections/TechnicalSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
@@ -15,7 +16,14 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["intro", "about", "experience", "projects", "contact"];
+      const sections = [
+        "intro",
+        "about",
+        "technical",
+        "experience",
+        "projects",
+        "contact",
+      ];
       const scrollPosition = window.scrollY + window.innerHeight * 0.3;
 
       // Show main content after scrolling down from intro section
@@ -105,10 +113,11 @@ export default function Home() {
           <div className="bg-navy-light border-t border-gray-800">
             <nav className="p-4 space-y-4">
               {[
-                { id: "about", label: "About", number: "01" },
-                { id: "experience", label: "Experience", number: "02" },
-                { id: "projects", label: "Projects", number: "03" },
-                { id: "contact", label: "Contact", number: "04" },
+                { id: "about", label: "About Me", number: "01" },
+                { id: "technical", label: "Technical", number: "02" },
+                { id: "experience", label: "Experience", number: "03" },
+                { id: "projects", label: "Projects", number: "04" },
+                { id: "contact", label: "Contact", number: "05" },
               ].map((item) => (
                 <button
                   key={item.id}
@@ -145,6 +154,7 @@ export default function Home() {
       >
         <IntroSection />
         <AboutSection />
+        <TechnicalSection />
         <ExperienceSection />
         <ProjectsSection />
         <ContactSection />
