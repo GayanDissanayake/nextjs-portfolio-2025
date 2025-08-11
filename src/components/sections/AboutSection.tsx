@@ -136,10 +136,10 @@ export default function AboutSection() {
             {personalStories.map((story) => (
               <div
                 key={story.id}
-                className={`relative p-6 rounded-xl border border-gray-700 bg-navy-light/50 backdrop-blur-sm cursor-pointer transition-all duration-300 group card-hover stagger-animation ${
+                className={`relative p-6 rounded-xl border transition-all duration-300 cursor-pointer group safe-hover ${
                   hoveredCard === story.id
-                    ? "border-beige-accent/50 shadow-lg shadow-beige-accent/10"
-                    : "hover:border-gray-600"
+                    ? "border-beige-accent bg-navy-light/80 shadow-xl shadow-beige-accent/20"
+                    : "border-gray-700 bg-navy-light/50 hover:border-beige-accent/50 hover:bg-navy-light/70"
                 }`}
                 onMouseEnter={() => setHoveredCard(story.id)}
                 onMouseLeave={() => setHoveredCard(null)}

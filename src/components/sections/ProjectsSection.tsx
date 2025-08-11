@@ -292,38 +292,6 @@ export default function ProjectsSection() {
               />
             ))}
           </div>
-
-          {/* Auto-play indicator */}
-          <div className="flex justify-center mt-4">
-            <button
-              onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="flex items-center gap-2 text-gray-400 hover:text-beige-accent transition-colors text-sm font-mono"
-            >
-              {isAutoPlaying ? (
-                <>
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                  </svg>
-                  <span>Pause</span>
-                </>
-              ) : (
-                <>
-                  <svg
-                    className="w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                  <span>Play</span>
-                </>
-              )}
-            </button>
-          </div>
         </div>
       </div>
     </section>

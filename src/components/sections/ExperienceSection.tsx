@@ -91,7 +91,7 @@ export default function ExperienceSection() {
           {experiences.map((experience, index) => (
             <div
               key={index}
-              className="bg-navy-light/50 border border-gray-700 rounded-xl p-6 hover:border-beige-accent/30 transition-all duration-300 group card-hover stagger-animation"
+              className="bg-navy-light/50 border border-gray-700 rounded-xl p-6 transition-all duration-300 group safe-hover hover:border-beige-accent/50 hover:bg-navy-light/70 hover:shadow-lg hover:shadow-beige-accent/10"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Company Header */}
