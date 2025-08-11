@@ -99,7 +99,7 @@ export default function TechnicalSection() {
         </div>
 
         {/* Experience Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {experience.map((exp, index) => (
             <div
               key={index}
@@ -117,7 +117,7 @@ export default function TechnicalSection() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Technology Categories */}
         <div className="mb-16">
