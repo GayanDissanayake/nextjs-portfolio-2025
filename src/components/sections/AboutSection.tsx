@@ -50,13 +50,17 @@ export default function AboutSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   const handleCardClick = (id: string) => {
-    // For now, we'll show a coming soon message
-    // Later these will navigate to actual pages/sections
-    alert(
-      `Coming soon! This will take you to: ${
-        personalStories.find((story) => story.id === id)?.title
-      }`
-    );
+    if (id === "world-map") {
+      // Navigate to the world map page in the same tab
+      window.location.href = "/world-map";
+    } else {
+      // For other sections, show coming soon message
+      alert(
+        `Coming soon! This will take you to: ${
+          personalStories.find((story) => story.id === id)?.title
+        }`
+      );
+    }
   };
 
   return (
