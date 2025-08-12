@@ -172,7 +172,7 @@ export default function AboutSection() {
               {personalStories.map((story) => (
                 <div
                   key={story.id}
-                  className={`relative p-6 rounded-xl border transition-all duration-300 cursor-pointer group safe-hover h-full min-h-[200px] flex flex-col ${
+                  className={`relative p-6 rounded-xl border transition-all duration-300 cursor-pointer group safe-hover h-full min-h-[150px] flex flex-col ${
                     hoveredCard === story.id
                       ? "border-beige-accent bg-navy-light/80 shadow-xl shadow-beige-accent/20"
                       : "border-gray-700 bg-navy-light/50 hover:border-beige-accent/50 hover:bg-navy-light/70"
