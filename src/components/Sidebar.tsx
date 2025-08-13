@@ -19,7 +19,7 @@ export default function Sidebar({
 }: SidebarProps) {
   return (
     <div
-      className={`fixed left-0 top-0 h-full w-80 bg-navy-light border-r border-gray-800 z-50 transition-transform duration-500 ${
+      className={`fixed left-0 top-0 h-full w-80 bg-gradient-to-b from-slate-900/95 to-blue-950/90 border-r border-blue-800/40 z-50 transition-transform duration-500 ${
         showMainContent ? "translate-x-0" : "-translate-x-full"
       }`}
     >
@@ -30,11 +30,13 @@ export default function Sidebar({
             onClick={() => scrollToSection("intro")}
             className="text-left group"
           >
-            <h1 className="text-2xl font-bold text-beige mb-2 group-hover:text-beige-accent transition-colors">
+            <h1 className="text-2xl font-bold text-blue-100 mb-2 group-hover:text-amber-300 transition-colors">
               Gayan Dissanayake
             </h1>
-            <h2 className="text-lg text-gray-400 mb-4">Full-Stack Developer</h2>
-            <p className="text-sm text-gray-300 leading-relaxed">
+            <h2 className="text-lg text-slate-400 mb-4">
+              Full-Stack Developer
+            </h2>
+            <p className="text-sm text-slate-300 leading-relaxed">
               I build exceptional digital experiences using modern web
               technologies.
             </p>
@@ -48,15 +50,15 @@ export default function Sidebar({
                 onClick={() => scrollToSection(item.id)}
                 className={`flex items-center group w-full text-left transition-all duration-200 ${
                   activeSection === item.id
-                    ? "text-beige-accent"
-                    : "text-gray-400 hover:text-beige"
+                    ? "text-amber-400"
+                    : "text-slate-400 hover:text-amber-200"
                 }`}
               >
                 <div
                   className={`w-8 h-px mr-4 transition-all duration-200 ${
                     activeSection === item.id
-                      ? "bg-beige-accent w-16"
-                      : "bg-gray-600 group-hover:bg-beige-accent group-hover:w-12"
+                      ? "bg-amber-400 w-16"
+                      : "bg-slate-600 group-hover:bg-amber-400 group-hover:w-12"
                   }`}
                 ></div>
                 <span className="text-xs font-mono mr-3">{item.number}.</span>
@@ -74,14 +76,14 @@ export default function Sidebar({
               href="/documents/cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center border border-beige-accent text-beige-accent px-4 py-2 rounded text-sm hover:bg-beige-accent hover:text-navy transition-all duration-200"
+              className="block text-center border border-amber-400 text-amber-300 px-4 py-2 rounded text-sm hover:bg-amber-400 hover:text-slate-900 transition-all duration-200"
             >
               View Resume
             </a>
             <a
               href="/documents/cv.pdf"
               download="Gayan_Dissanayake_CV.pdf"
-              className="block text-center bg-beige-accent text-navy px-4 py-2 rounded text-sm hover:bg-amber-300 transition-all duration-200"
+              className="block text-center bg-amber-800/80 text-amber-200 px-4 py-2 rounded text-sm hover:bg-amber-700/90 transition-all duration-200"
             >
               Download CV
             </a>
@@ -93,7 +95,7 @@ export default function Sidebar({
               href="https://github.com/GayanDissanayake"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-beige-accent hover:!text-gray-400 transition-colors duration-300 transform hover:-translate-y-1"
+              className="text-slate-400 hover:!text-amber-400 transition-colors duration-300 transform hover:-translate-y-1"
               title="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -104,7 +106,7 @@ export default function Sidebar({
               href="https://linkedin.com/in/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-beige-accent hover:!text-gray-400 transition-colors duration-300 transform hover:-translate-y-1"
+              className="text-slate-400 hover:!text-amber-400 transition-colors duration-300 transform hover:-translate-y-1"
               title="LinkedIn"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

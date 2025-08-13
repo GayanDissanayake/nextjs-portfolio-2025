@@ -1,6 +1,7 @@
 "use client";
 
 import ScrollAnimation from "../ScrollAnimation";
+import { useState, useRef } from "react";
 
 const experiences = [
   {
@@ -77,116 +78,315 @@ const experiences = [
 ];
 
 export default function ExperienceSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragOffset, setDragOffset] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const nextExperience = () => {
+    setCurrentIndex((prev) => (prev + 1) % experiences.length);
+    setExpandedCard(null);
+  };
+
+  const prevExperience = () => {
+    setCurrentIndex(
+      (prev) => (prev - 1 + experiences.length) % experiences.length
+    );
+    setExpandedCard(null);
+  };
+
+  const toggleExpanded = (index: number) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  // Touch/Mouse handlers for smooth dragging
+  const handleStart = (clientX: number) => {
+    setIsDragging(true);
+    setDragStart(clientX);
+    setDragOffset(0);
+  };
+
+  const handleMove = (clientX: number) => {
+    if (!isDragging) return;
+    const offset = clientX - dragStart;
+    setDragOffset(offset);
+  };
+
+  const handleEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    const threshold = 100; // Minimum drag distance to trigger slide change
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        prevExperience();
+      } else {
+        nextExperience();
+      }
+    }
+    setDragOffset(0);
+  };
+
+  // Mouse handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    handleMove(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    handleEnd();
+  };
+
+  // Touch handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    handleStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    handleMove(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    handleEnd();
+  };
+
+  const currentExperience = experiences[currentIndex];
+
   return (
     <section
       id="experience"
-      className="min-h-screen flex items-center px-4 lg:px-8 py-20"
+      className="min-h-screen flex items-center px-4 lg:px-8 py-20 bg-slate-950"
     >
       <div className="max-w-6xl mx-auto w-full">
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="flex items-center mb-16">
-            <span className="text-beige-accent font-mono text-lg mr-4">
-              03.
-            </span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-100">
               Where I&apos;ve Worked
             </h2>
-            <div className="flex-1 h-px bg-gray-600 ml-4 lg:ml-8"></div>
+            <div className="flex-1 h-px bg-slate-600 ml-4 lg:ml-8"></div>
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {experiences.map((experience, index) => (
-            <ScrollAnimation key={index} direction="up" delay={index * 0.1}>
-              <div className="bg-navy-light/50 border border-gray-700 rounded-xl p-6 transition-all duration-300 group safe-hover hover:border-beige-accent/50 hover:bg-navy-light/70 hover:shadow-lg hover:shadow-beige-accent/10 h-full min-h-[600px] flex flex-col">
-                {/* Company Header */}
-                <div className="mb-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-beige group-hover:text-beige-accent transition-colors">
-                      {experience.title}
+        <div className="max-w-4xl mx-auto">
+          {/* Experience Navigation */}
+          <ScrollAnimation direction="up" delay={0.2}>
+            <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center space-x-4">
+                <span className="text-teal-200 font-mono text-sm">
+                  {String(currentIndex + 1).padStart(2, "0")} /{" "}
+                  {String(experiences.length).padStart(2, "0")}
+                </span>
+                <div className="h-px bg-teal-600/40 w-16"></div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={prevExperience}
+                  className="w-10 h-10 border border-teal-600/30 rounded-full flex items-center justify-center hover:border-teal-400/50 hover:text-teal-100 transition-all duration-300 group"
+                  aria-label="Previous experience"
+                >
+                  <svg
+                    className="w-4 h-4 group-hover:scale-110 transition-transform text-teal-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={nextExperience}
+                  className="w-10 h-10 border border-teal-600/30 rounded-full flex items-center justify-center hover:border-teal-400/50 hover:text-teal-100 transition-all duration-300 group"
+                  aria-label="Next experience"
+                >
+                  <svg
+                    className="w-4 h-4 group-hover:scale-110 transition-transform text-teal-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* Current Experience Card */}
+          <ScrollAnimation direction="left" delay={0.3} key={currentIndex}>
+            <div
+              ref={containerRef}
+              className="bg-teal-900/30 border border-teal-600/40 rounded-2xl p-8 transition-all duration-500 hover:border-teal-500/70 hover:bg-teal-800/40 cursor-grab active:cursor-grabbing select-none"
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              style={{
+                transform: `translateX(${isDragging ? dragOffset * 0.1 : 0}px)`,
+                transition: isDragging ? "none" : "transform 0.3s ease-out",
+              }}
+            >
+              {/* Main Info */}
+              <div className="flex items-start justify-between mb-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-3">
+                    <h3 className="text-2xl font-bold text-teal-100">
+                      {currentExperience.title}
                     </h3>
-                    <span className="text-xs font-mono text-beige-accent bg-beige-accent/10 px-2 py-1 rounded-full">
-                      {experience.type}
+                    <span className="text-xs font-mono text-teal-200 bg-teal-800/30 px-3 py-1 rounded-full">
+                      {currentExperience.type}
                     </span>
                   </div>
-                  <h4 className="text-lg font-semibold text-beige-accent mb-1">
-                    {experience.company}
+                  <h4 className="text-xl font-semibold text-teal-200 mb-2">
+                    {currentExperience.company}
                   </h4>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-gray-400 font-mono text-sm">
-                    <span>{experience.period}</span>
-                    <span className="hidden sm:inline">•</span>
-                    <span>{experience.location}</span>
+                  <div className="flex items-center gap-4 text-teal-300 font-mono text-sm mb-4">
+                    <span>{currentExperience.period}</span>
+                    <span>•</span>
+                    <span>{currentExperience.location}</span>
                   </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                  {experience.description}
-                </p>
-
-                {/* Key Responsibilities */}
-                <div className="mb-6 flex-1">
-                  <h5 className="text-beige font-semibold text-sm mb-3">
-                    Key Responsibilities:
-                  </h5>
-                  <ul className="space-y-2">
-                    {experience.responsibilities
-                      .slice(0, 3)
-                      .map((item, itemIndex) => (
-                        <li
-                          key={itemIndex}
-                          className="flex items-start text-gray-300 text-sm"
-                        >
-                          <span className="text-beige-accent mr-2 mt-1 font-mono text-xs">
-                            ▹
-                          </span>
-                          <span className="leading-relaxed">{item}</span>
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-
-                {/* Technologies */}
-                <div className="mb-6">
-                  <h5 className="text-beige font-semibold text-sm mb-3">
-                    Technologies:
-                  </h5>
-                  <div className="flex flex-wrap gap-2">
-                    {experience.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-beige-accent/10 text-beige-accent text-xs px-2 py-1 rounded-md font-mono"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Achievements */}
-                <div className="mt-auto">
-                  <h5 className="text-beige font-semibold text-sm mb-3">
-                    Key Achievements:
-                  </h5>
-                  <ul className="space-y-1">
-                    {experience.achievements.map(
-                      (achievement, achievementIndex) => (
-                        <li
-                          key={achievementIndex}
-                          className="flex items-start text-gray-300 text-sm"
-                        >
-                          <span className="text-green-400 mr-2 mt-1 text-xs">
-                            ✓
-                          </span>
-                          <span className="leading-relaxed">{achievement}</span>
-                        </li>
-                      )
-                    )}
-                  </ul>
+                  <p className="text-teal-100/90 leading-relaxed max-w-2xl">
+                    {currentExperience.description}
+                  </p>
                 </div>
               </div>
-            </ScrollAnimation>
-          ))}
+
+              {/* Technologies Preview */}
+              <div className="mb-6">
+                <h5 className="text-teal-100 font-semibold text-sm mb-3">
+                  Technologies:
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {currentExperience.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="bg-teal-800/30 text-teal-200 text-sm px-3 py-1 rounded-lg font-mono"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Expand/Collapse Button */}
+              <div className="flex justify-center">
+                <button
+                  onClick={() => toggleExpanded(currentIndex)}
+                  className="flex items-center space-x-2 text-teal-200 hover:text-teal-100 transition-colors duration-300 group"
+                >
+                  <span className="font-mono text-sm">
+                    {expandedCard === currentIndex
+                      ? "Show Less"
+                      : "Show Details"}
+                  </span>
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      expandedCard === currentIndex ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Expanded Details */}
+              {expandedCard === currentIndex && (
+                <div className="mt-8 pt-8 border-t border-[#192E41]/25 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fadeIn">
+                  {/* Responsibilities */}
+                  <div>
+                    <h5 className="text-teal-100 font-semibold text-lg mb-4">
+                      Key Responsibilities
+                    </h5>
+                    <ul className="space-y-3">
+                      {currentExperience.responsibilities.map(
+                        (item, itemIndex) => (
+                          <li
+                            key={itemIndex}
+                            className="flex items-start text-teal-100/90"
+                          >
+                            <span className="text-teal-200 mr-3 mt-1 font-mono text-sm">
+                              ▹
+                            </span>
+                            <span className="leading-relaxed">{item}</span>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* Achievements */}
+                  <div>
+                    <h5 className="text-teal-100 font-semibold text-lg mb-4">
+                      Key Achievements
+                    </h5>
+                    <ul className="space-y-3">
+                      {currentExperience.achievements.map(
+                        (achievement, achievementIndex) => (
+                          <li
+                            key={achievementIndex}
+                            className="flex items-start text-teal-100/90"
+                          >
+                            <span className="text-teal-300 mr-3 mt-1">✓</span>
+                            <span className="leading-relaxed">
+                              {achievement}
+                            </span>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+          </ScrollAnimation>
+
+          {/* Experience Indicators */}
+          <ScrollAnimation direction="up" delay={0.4}>
+            <div className="flex justify-center space-x-3 mt-8">
+              {experiences.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setCurrentIndex(index);
+                    setExpandedCard(null);
+                  }}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentIndex === index
+                      ? "bg-[#192E41] scale-125"
+                      : "bg-[#616862]/30 hover:bg-[#616862]/50"
+                  }`}
+                  aria-label={`Go to experience ${index + 1}`}
+                />
+              ))}
+            </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>

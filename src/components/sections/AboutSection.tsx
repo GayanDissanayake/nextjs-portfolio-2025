@@ -86,15 +86,12 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center px-4 lg:px-8 pt-5 pb-20"
+      className="min-h-screen flex items-center px-4 lg:px-8 pt-5 pb-20 bg-slate-950"
     >
       <div className="max-w-6xl mx-auto w-full">
         {/* Section Header */}
         <ScrollAnimation direction="up" duration={0.8}>
           <div className="flex items-center mb-16">
-            <span className="text-beige-accent font-mono text-lg mr-4">
-              01.
-            </span>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-beige text-shimmer">
               About Me - The Human Side
             </h2>
@@ -174,8 +171,8 @@ export default function AboutSection() {
                   key={story.id}
                   className={`relative p-6 rounded-xl border transition-all duration-300 cursor-pointer group safe-hover h-full min-h-[150px] flex flex-col ${
                     hoveredCard === story.id
-                      ? "border-beige-accent bg-navy-light/80 shadow-xl shadow-beige-accent/20"
-                      : "border-gray-700 bg-navy-light/50 hover:border-beige-accent/50 hover:bg-navy-light/70"
+                      ? "border-teal-500/70 bg-teal-800/50 shadow-xl shadow-teal-500/20"
+                      : "border-teal-600/40 bg-teal-900/30 hover:border-teal-500/70 hover:bg-teal-800/40"
                   }`}
                   onMouseEnter={() => setHoveredCard(story.id)}
                   onMouseLeave={() => setHoveredCard(null)}
@@ -183,7 +180,7 @@ export default function AboutSection() {
                 >
                   {/* Coming Soon Badge */}
                   {story.coming && (
-                    <div className="absolute top-2 right-2 bg-beige-accent text-navy text-xs px-2 py-1 rounded-full font-mono">
+                    <div className="absolute top-2 right-2 bg-teal-500 text-teal-950 text-xs px-2 py-1 rounded-full font-mono">
                       Coming Soon
                     </div>
                   )}
@@ -193,17 +190,17 @@ export default function AboutSection() {
                       {story.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-beige mb-2 group-hover:text-beige-accent transition-colors">
+                      <h4 className="font-bold text-teal-100 mb-2 group-hover:text-teal-200 transition-colors">
                         {story.title}
                       </h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">
+                      <p className="text-teal-200 text-sm leading-relaxed">
                         {story.description}
                       </p>
                     </div>
                   </div>
 
                   {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-beige-accent/5 to-green-400/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-teal-400/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               ))}
             </StaggeredAnimation>

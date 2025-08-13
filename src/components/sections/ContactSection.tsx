@@ -43,14 +43,11 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center px-4 lg:px-8 py-20"
+      className="min-h-screen flex items-center px-4 lg:px-8 py-20 bg-slate-950"
     >
       <div className="max-w-2xl mx-auto w-full text-center">
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="mb-12">
-            <span className="text-beige-accent font-mono text-lg">
-              05. What&apos;s Next?
-            </span>
             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-beige mt-4 mb-6">
               Get In Touch
             </h2>
@@ -75,7 +72,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-navy-light/50 border border-gray-600 rounded-xl focus:border-beige-accent focus:outline-none focus:ring-2 focus:ring-beige-accent/20 text-beige placeholder-gray-400 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-800/80 border border-slate-600/60 rounded-xl focus:border-slate-500/80 focus:outline-none focus:ring-2 focus:ring-slate-500/40 text-slate-100 placeholder-slate-400 transition-all duration-300"
                   />
                 </div>
                 <div className="relative">
@@ -86,7 +83,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-navy-light/50 border border-gray-600 rounded-xl focus:border-beige-accent focus:outline-none focus:ring-2 focus:ring-beige-accent/20 text-beige placeholder-gray-400 transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-800/80 border border-slate-600/60 rounded-xl focus:border-slate-500/80 focus:outline-none focus:ring-2 focus:ring-slate-500/40 text-slate-100 placeholder-slate-400 transition-all duration-300"
                   />
                 </div>
               </div>
@@ -99,14 +96,14 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-navy-light/50 border border-gray-600 rounded-xl focus:border-beige-accent focus:outline-none focus:ring-2 focus:ring-beige-accent/20 text-beige placeholder-gray-400 resize-none transition-all duration-300"
+                  className="w-full px-4 py-3 bg-slate-800/80 border border-slate-600/60 rounded-xl focus:border-slate-500/80 focus:outline-none focus:ring-2 focus:ring-slate-500/40 text-slate-100 placeholder-slate-400 resize-none transition-all duration-300"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-beige-accent to-amber-500 text-navy font-bold rounded-xl hover:from-amber-500 hover:to-beige-accent transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg shadow-beige-accent/25"
+                className="w-full px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-bold rounded-xl hover:from-emerald-500 hover:to-green-500 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none shadow-lg shadow-emerald-400/25"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">

@@ -18,7 +18,7 @@ export default function IntroSection() {
   return (
     <section
       id="intro"
-      className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 lg:px-8 relative gap-12 lg:gap-16"
+      className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 lg:px-8 relative gap-12 lg:gap-16 bg-slate-950"
     >
       {/* Profile Image */}
       <motion.div
@@ -44,7 +44,7 @@ export default function IntroSection() {
       {/* Text Content */}
       <div className="text-center lg:text-left max-w-2xl order-2 lg:order-1">
         <motion.p
-          className="text-beige-accent font-mono text-lg mb-6"
+          className="text-white font-mono text-lg mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -53,16 +53,23 @@ export default function IntroSection() {
         </motion.p>
 
         <motion.h1
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-beige mb-6"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          style={{
+            background:
+              "linear-gradient(135deg, #f5f5dc 0%, #deb887 50%, #d2b48c 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
         >
           Gayan Dissanayake
         </motion.h1>
 
         <motion.h2
-          className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-400 mb-8"
+          className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-400 mb-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
