@@ -21,7 +21,7 @@ export default function IntroSection() {
       className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-4 lg:px-8 relative gap-12 lg:gap-16 bg-slate-950"
     >
       {/* Profile Image */}
-      <motion.div
+      {/* <motion.div
         className="flex-shrink-0 order-1 lg:order-2"
         initial={{ opacity: 0, scale: 0.8, rotateY: 20 }}
         animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -35,14 +35,14 @@ export default function IntroSection() {
             height={300}
             className="rounded-full shadow-2xl border-4 border-beige-accent/20"
             priority
-          />
-          {/* Decorative ring */}
-          <div className="absolute inset-0 rounded-full ring-2 ring-beige-accent/30 ring-offset-4 ring-offset-navy"></div>
+          /> */}
+      {/* Decorative ring */}
+      {/* <div className="absolute inset-0 rounded-full ring-2 ring-beige-accent/30 ring-offset-4 ring-offset-navy"></div>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Text Content */}
-      <div className="text-center lg:text-left max-w-2xl order-2 lg:order-1">
+      <div className="text-center lg:text-center max-w-2xl order-2 lg:order-1">
         <motion.p
           className="text-white font-mono text-lg mb-6"
           initial={{ opacity: 0, y: 30 }}
