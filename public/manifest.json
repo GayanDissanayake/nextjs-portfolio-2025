@@ -1,0 +1,22 @@
+{
+  "name": "Gayan Dissanayake Portfolio",
+  "short_name": "Gayan Portfolio",
+  "description": "Full-Stack Developer Portfolio - Gayan Dissanayake",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#FBBF24",
+  "icons": [
+    {
+      "src": "/favicon-custom.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-custom-16x16.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml"
+    }
+  ]
+}
