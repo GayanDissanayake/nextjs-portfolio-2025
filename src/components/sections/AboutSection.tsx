@@ -14,9 +14,10 @@ const personalStories = [
   },
   {
     id: "education",
-    title: "🎓 School & Learning Journey",
-    description: "From curious student to lifelong learner",
-    icon: "📚",
+    title: "👑 The Royal Legacy",
+    description: `My School & Cricket journey - Where I, 'Learnt of books and men, and learnt to play the
+              game'`,
+    icon: "🏏",
     coming: false,
   },
   {

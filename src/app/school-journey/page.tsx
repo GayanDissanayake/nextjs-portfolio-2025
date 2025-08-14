@@ -13,7 +13,7 @@ interface ImageCarouselProps {
 const storyImages = {
   school: {
     images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
-    title: "Royal College Campus",
+    title: "Royal College, Colombo, Sri Lanka",
   },
   cricket: {
     images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
@@ -162,7 +162,7 @@ export default function SchoolJourney() {
           </Link>
 
           <h1 className="text-4xl md:text-5xl font-bold text-yellow-400 mb-6 leading-tight">
-            My Royal College Journey
+            &ldquo;Floreat&ldquo; - May it flourish
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-300 mb-4">
             Fourteen Years at the School of Our Fathers
