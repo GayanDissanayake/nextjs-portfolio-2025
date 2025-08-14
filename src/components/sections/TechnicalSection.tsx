@@ -30,7 +30,6 @@ const techCategories = [
       "Express.js",
       "GraphQL",
       "Python",
-      "Flask",
     ],
     description: "Building robust server-side applications",
     proficiency: "Advanced",
@@ -275,7 +274,12 @@ export default function TechnicalSection() {
               🚀 Currently Exploring
             </h3>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
-              {["Three.js", "Web3", "Microservices"].map((tech, index) => (
+              {[
+                "Greenstone Digital Library",
+                "WordPress",
+                "Three.js",
+                "Microservices",
+              ].map((tech, index) => (
                 <span
                   key={index}
                   className="bg-green-400/10 text-green-400 px-4 py-2 rounded-full font-mono text-sm border border-green-400/20 hover:bg-green-400/20 transition-colors duration-300"

@@ -5,14 +5,6 @@ import StaggeredAnimation from "../StaggeredAnimation";
 
 const personalStories = [
   {
-    id: "enhanced-3d-about-me",
-    title: "🌟 Enhanced 3D About Me",
-    description:
-      "Immersive 3D experience with my character, pet, and interactive story objects",
-    icon: "🎮",
-    coming: true,
-  },
-  {
     id: "education",
     title: "👑 The Royal Legacy",
     description: `My School & Cricket journey - Where I, 'Learnt of books and men, and learnt to play the
@@ -20,6 +12,15 @@ const personalStories = [
     icon: "🏏",
     coming: false,
   },
+  {
+    id: "enhanced-3d-about-me",
+    title: "🌟 Enhanced 3D About Me",
+    description:
+      "Immersive 3D experience with my character, pet, and interactive story objects",
+    icon: "🎮",
+    coming: true,
+  },
+
   {
     id: "advanced-3d",
     title: "🎮 Advanced 3D Showcase",

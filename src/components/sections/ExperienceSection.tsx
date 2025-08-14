@@ -5,10 +5,10 @@ import { useState, useRef } from "react";
 
 const experiences = [
   {
-    title: "Full Stack Developer",
-    company: "Tech Solutions Inc.",
-    period: "January 2023 - Present",
-    location: "Auckland, New Zealand",
+    title: "Software Engineer Intern",
+    company: "University of Waikato, NZ",
+    period: "July 2024 - Present",
+    location: "Hamilton, New Zealand",
     type: "Full-time",
     description:
       "Leading end-to-end development of web applications using modern technologies and best practices.",
@@ -19,14 +19,7 @@ const experiences = [
       "Implemented CI/CD pipelines and deployed applications to AWS cloud infrastructure",
       "Mentored junior developers and conducted code reviews to maintain high code quality standards",
     ],
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "AWS",
-    ],
+    technologies: ["WordPress", "Greenstone Digital Library"],
     achievements: [
       "Reduced application load time by 40% through performance optimization",
       "Led migration from legacy systems to modern tech stack",
@@ -34,11 +27,11 @@ const experiences = [
     ],
   },
   {
-    title: "Frontend Developer",
-    company: "Digital Agency NZ",
-    period: "June 2021 - December 2022",
-    location: "Wellington, New Zealand",
-    type: "Full-time",
+    title: "Full Stack Developer",
+    company: "",
+    period: "January 2024 - June 2024",
+    location: "sss, USA",
+    type: "Part-time - Remote",
     description:
       "Specialized in creating responsive, accessible user interfaces for diverse client portfolio.",
     responsibilities: [
