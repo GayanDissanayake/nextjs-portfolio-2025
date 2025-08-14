@@ -31,7 +31,7 @@ const personalStories = [
     title: "🎓 School & Learning Journey",
     description: "From curious student to lifelong learner",
     icon: "📚",
-    coming: true,
+    coming: false,
   },
   {
     id: "hobbies",
@@ -73,6 +73,9 @@ export default function AboutSection() {
     } else if (id === "travel") {
       // Navigate to the interactive travel map
       window.location.href = "/travel-map";
+    } else if (id === "education") {
+      // Navigate to the school journey page
+      window.location.href = "/school-journey";
     } else {
       // For other sections, show coming soon message
       alert(
@@ -105,23 +108,35 @@ export default function AboutSection() {
             <div className="space-y-6">
               <div className="text-gray-300 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Hello! I&apos;m Gayan - not just a developer, but a curious
-                  soul who believes that the best code comes from understanding
-                  people, places, and experiences beyond the screen.
+                  Hello! I&apos;m Gayan, a full-stack developer and
+                  Master&apos;s student in Information Technology at the
+                  University of Waikato, with a knack for solving
+                  problems—whether it&apos;s untangling a tricky bug in code or
+                  finding the simplest way to tackle life&apos;s challenges. I
+                  love the thrill of cracking a problem, whether it&apos;s
+                  optimizing a ReactJS app or figuring out the most efficient
+                  way to get things done (call it lazy genius, but I always
+                  deliver!).
                 </p>
                 <p className="text-lg leading-relaxed">
-                  When I&apos;m not crafting digital experiences, you&apos;ll
-                  find me exploring new places (ask me about my travel
-                  stories!), experimenting in the kitchen, or spending quality
-                  time with my furry coding companion who&apos;s always ready to
-                  &quot;debug&quot; my work with enthusiastic tail wags.
+                  When I&apos;m not coding, you&apos;ll catch me smashing
+                  boundaries on the cricket pitch—a passion from my days as a
+                  Sri Lankan school cricketer—or lifting weights at the gym to
+                  stay sharp. I&apos;m all about good vibes with friends,
+                  exploring new places in New Zealand, and chasing the next food
+                  adventure (from spicy Sri Lankan curries to Sushi—my
+                  favourite—to Kiwi classics). I&apos;m a beginner cook, but my
+                  Creamy Bacon Pasta is a crowd-pleaser! Back in Sri Lanka, my
+                  furry best friend (a tail-wagging problem-solver in his own
+                  right) keeps my family company while I study abroad.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  I believe that great technology should tell human stories.
-                  Every project I work on is influenced by the diverse
-                  experiences I&apos;ve collected - from different cultures
-                  I&apos;ve encountered to the simple joy of a perfectly brewed
-                  cup of coffee during a late-night coding session.
+                  For me, coding and life are about finding smart, efficient
+                  solutions that make an impact. Whether it&apos;s building a
+                  user-friendly Web Application or planning a weekend getaway
+                  with mates, I focus on solutions, not problems, drawing
+                  inspiration from diverse cultures, travel stories, and a good
+                  plate of food.
                 </p>
               </div>
             </div>
@@ -129,15 +144,15 @@ export default function AboutSection() {
 
           {/* Profile Image with Fun Twist */}
           <ScrollAnimation direction="right" duration={0.8} delay={0.4}>
-            <div className="lg:col-span-1">
-              <div className="relative group max-w-sm mx-auto lg:mx-0">
+            <div className="lg:col-span-1 flex items-center">
+              <div className="relative group w-full">
                 <div className="relative">
-                  <div className="w-80 h-80 rounded-2xl overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
+                  <div className="w-full aspect-square rounded-2xl overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src="/images/profile/beach.jpeg"
                       alt="Gayan Dissanayake - The person behind the code"
-                      width={320}
-                      height={320}
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover"
                     />
                     {/* Fun overlay on hover */}

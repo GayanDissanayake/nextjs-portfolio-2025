@@ -43,28 +43,52 @@ export default function Sidebar({
           </button>
 
           {/* Navigation */}
+          {/* Navigation */}
           <nav className="space-y-4 mt-12">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`flex items-center group w-full text-left transition-all duration-200 ${
+                className={`flex items-center w-full text-left group transition-all duration-300 ${
                   activeSection === item.id
-                    ? "text-amber-400"
+                    ? "text-amber-300"
                     : "text-slate-400 hover:text-amber-200"
                 }`}
               >
+                <span className="text-xs font-mono mr-4 group-hover:text-amber-400">
+                  {item.number}
+                </span>
+                <span className="text-sm font-medium tracking-wide">
+                  {item.label}
+                </span>
                 <div
-                  className={`w-8 h-px mr-4 transition-all duration-200 ${
+                  className={`ml-auto h-px bg-slate-600 transition-all duration-300 ${
                     activeSection === item.id
-                      ? "bg-amber-400 w-16"
-                      : "bg-slate-600 group-hover:bg-amber-400 group-hover:w-12"
+                      ? "w-16 bg-amber-400"
+                      : "w-8 group-hover:w-12 group-hover:bg-amber-400"
                   }`}
-                ></div>
-                <span className="text-xs font-mono mr-3">{item.number}.</span>
-                <span className="text-sm font-medium">{item.label}</span>
+                />
               </button>
             ))}
+
+            {/* School Journey Special Link */}
+            <div className="mt-8 pt-4 border-t border-slate-700">
+              <a
+                href="/school-journey"
+                className="flex items-center w-full text-left group transition-all duration-300 text-slate-400 hover:text-cyan-300"
+              >
+                <span className="text-xs font-mono mr-4 group-hover:text-cyan-400">
+                  ✦
+                </span>
+                <span className="text-sm font-medium tracking-wide">
+                  School Journey
+                </span>
+                <div className="ml-auto h-px w-8 bg-slate-600 transition-all duration-300 group-hover:w-12 group-hover:bg-cyan-400" />
+              </a>
+              <p className="text-xs text-slate-500 mt-2 ml-6">
+                Royal College Colombo
+              </p>
+            </div>
           </nav>
         </div>
 
