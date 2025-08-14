@@ -10,6 +10,13 @@ const personalStories = [
     description:
       "Immersive 3D experience with my character, pet, and interactive story objects",
     icon: "🎮",
+    coming: true,
+  },
+  {
+    id: "education",
+    title: "🎓 School & Learning Journey",
+    description: "From curious student to lifelong learner",
+    icon: "📚",
     coming: false,
   },
   {
@@ -17,20 +24,13 @@ const personalStories = [
     title: "🎮 Advanced 3D Showcase",
     description: "Three.js experiments and interactive experiences",
     icon: "✨",
-    coming: false,
+    coming: true,
   },
   {
     id: "travel",
     title: "🌍 Travel Adventures",
     description: "Places I've been, cultures I've experienced",
     icon: "✈️",
-    coming: false,
-  },
-  {
-    id: "education",
-    title: "🎓 School & Learning Journey",
-    description: "From curious student to lifelong learner",
-    icon: "📚",
     coming: false,
   },
   {

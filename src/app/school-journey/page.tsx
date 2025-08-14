@@ -12,31 +12,19 @@ interface ImageCarouselProps {
 
 const storyImages = {
   school: {
-    images: [
-      "/images/profile/profile-photo.jpg",
-      "/images/profile/profile-photo-2.jpg",
-    ],
+    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
     title: "Royal College Campus",
   },
   cricket: {
-    images: [
-      "/images/profile/profile-photo-3.jpg",
-      "/images/profile/profile-photo.jpg",
-    ],
+    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
     title: "Cricket Journey",
   },
   prefect: {
-    images: [
-      "/images/profile/profile-photo.jpg",
-      "/images/profile/profile-photo-2.jpg",
-    ],
+    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
     title: "Leadership Moments",
   },
   bigmatch: {
-    images: [
-      "/images/profile/profile-photo-3.jpg",
-      "/images/profile/profile-photo.jpg",
-    ],
+    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
     title: "Battle of the Blues",
   },
 };
@@ -181,7 +169,7 @@ export default function SchoolJourney() {
           </h2>
           <div className="w-24 h-1 bg-yellow-400 mb-8"></div>
           <p className="text-lg text-gray-300 leading-relaxed max-w-4xl">
-            From a wide-eyed six-year-old entering Year 1 in 2004 to graduating
+            From a wide-eyed six-year-old entering Year 1 in 2004 to signing off
             as a Senior Prefect in 2018, my journey at Royal College Colombo
             shaped not just my academic foundation, but my character, values,
             and worldview. This is the story of those transformative fourteen
@@ -248,7 +236,7 @@ export default function SchoolJourney() {
             </div>
             <div className="lg:col-span-3 lg:order-2">
               <h3 className="text-3xl font-semibold text-yellow-400 mb-8">
-                The Cricket Evolution: From Pace to Spin
+                The Cricket Metamorphosis: A Journey of Constant Evolution
               </h3>
               <div className="prose prose-xl text-gray-300 space-y-8">
                 <p>
@@ -256,24 +244,49 @@ export default function SchoolJourney() {
                   Like many young cricketers in Sri Lanka, I started as a fast
                   bowler, drawn to the raw power and aggression of pace bowling.
                   The cricket grounds at Royal, where the game has been played
-                  since 1838, became my second classroom.
+                  since 1838, became my second classroom. As a lower-order
+                  batsman and pace bowler, I thought I knew my place in the
+                  game.
                 </p>
                 <p>
-                  But cricket, like life, taught me that adaptation is key to
-                  survival. By 2012, I had made a dramatic transformation that
-                  would define my cricket career—I became a chinaman bowler.
-                  Left-arm unorthodox spin, or &quot;chinaman&quot; bowling, is
-                  one of the rarest and most deceptive arts in cricket. The ball
-                  that appears to be spinning one way suddenly turns the other,
-                  leaving batsmen bewildered.
+                  But cricket, like life, taught me that adaptation is the key
+                  to not just survival, but excellence. By 2012, I had made my
+                  first dramatic transformation—I became a left-arm leg spinner.
+                  This wasn&apos;t just changing my bowling style; it was
+                  completely reimagining my role in the team. The success came
+                  quickly, and I found myself representing Colombo district and
+                  provincial U15 teams, proving that sometimes the biggest risks
+                  yield the greatest rewards.
                 </p>
                 <p>
-                  This transformation wasn&apos;t just about cricket technique;
-                  it was a metaphor for adaptability and strategic thinking that
-                  would serve me well beyond the cricket field. The hours spent
-                  perfecting my craft, understanding the subtle variations, and
-                  developing the mental game of spin bowling taught me patience,
-                  perseverance, and the art of strategic deception.
+                  Just when I thought I had found my identity, 2016 brought
+                  another seismic shift. I evolved from left-arm leg spin to
+                  left-arm chinaman bowling—one of the rarest and most deceptive
+                  arts in cricket. &quot;Chinaman&quot; bowling is left-arm
+                  unorthodox spin, where the ball that appears to be spinning
+                  one way suddenly turns the other, leaving batsmen bewildered.
+                  By this time, I had also progressed from the lower order to
+                  become a reliable middle-order batsman.
+                </p>
+                <p>
+                  The most dramatic transformation of all came in 2017—my final
+                  evolution that would define my school cricket legacy. I became
+                  an opening batsman. From a tail-end pace bowler in 2008 to an
+                  opening batsman-bowler by 2017, this journey represented
+                  nearly a decade of constant reinvention. In 2018, during the
+                  Battle of the Blues, I proudly represented Royal College as an
+                  opening batsman and chinaman bowler—a rare combination that
+                  embodied my complete cricketing metamorphosis.
+                </p>
+                <p>
+                  This journey of constant evolution wasn&apos;t just about
+                  cricket technique; it was a masterclass in adaptability,
+                  strategic thinking, and never accepting limitations. The
+                  willingness to completely reinvent myself multiple times
+                  taught me that success isn&apos;t about finding your
+                  place—it&apos;s about creating it. These lessons in
+                  adaptability and strategic reinvention continue to serve me
+                  well beyond the cricket field.
                 </p>
               </div>
             </div>
@@ -444,10 +457,19 @@ export default function SchoolJourney() {
                   tradition. The weeks leading up to the match were filled with
                   intense preparation, team bonding, and the weight of
                   expectation from thousands of Old Royalists around the world.
-                  As a chinaman bowler, I brought a unique weapon to our
-                  arsenal—the unpredictable nature of left-arm unorthodox spin,
-                  combined with the pressure of the big occasion, created
-                  moments of magic that I&apos;ll cherish forever.
+                  As an opening batsman and chinaman bowler, I brought a unique
+                  combination to our team—the responsibility of setting the tone
+                  with the bat from ball one, combined with the unpredictable
+                  weapon of left-arm unorthodox spin when we had the ball.
+                </p>
+                <p>
+                  The transformation from a tail-end pace bowler to an opening
+                  batsman all-rounder embodied everything Royal College stood
+                  for—constant improvement, adaptability, and the courage to
+                  embrace new challenges. Standing at the crease as an opener in
+                  the Battle of the Blues, with the pressure of the big occasion
+                  and the weight of tradition, represented the culmination of
+                  nearly a decade of cricketing evolution.
                 </p>
                 <p>
                   Beyond the games themselves, both the Big Match and Mini
@@ -467,31 +489,37 @@ export default function SchoolJourney() {
               {/* Cricket Leadership Card */}
               <div className="bg-slate-800 p-8 rounded-2xl border border-yellow-400/20 w-full max-w-lg">
                 <h4 className="text-xl font-semibold text-yellow-400 mb-6 text-center">
-                  Cricket Leadership
+                  Cricket Evolution
                 </h4>
                 <div className="space-y-4">
                   <div className="text-center">
-                    <div className="text-gray-400 text-base">U17 Team</div>
+                    <div className="text-gray-400 text-base">2008-2012</div>
                     <div className="text-white font-medium text-lg">
-                      Vice Captain
+                      Pace Bowler + Lower Order
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-gray-400 text-base">U19 2nd XI</div>
+                    <div className="text-gray-400 text-base">2012-2016</div>
                     <div className="text-white font-medium text-lg">
-                      Captain (2x)
+                      Left Arm Leg Spinner + District Rep
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-gray-400 text-base">U19 1st XI</div>
+                    <div className="text-gray-400 text-base">2016-2017</div>
                     <div className="text-white font-medium text-lg">
-                      Big Match Player
+                      Chinaman Bowler + Middle Order
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-gray-400 text-base">Specialty</div>
+                    <div className="text-gray-400 text-base">2017-2018</div>
                     <div className="text-white font-medium text-lg">
-                      Chinaman Bowler
+                      Opening Batsman All-Rounder
+                    </div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-gray-400 text-base">Leadership</div>
+                    <div className="text-white font-medium text-lg">
+                      U17 Vice Captain • U19 2nd XI Captain (2x)
                     </div>
                   </div>
                 </div>
