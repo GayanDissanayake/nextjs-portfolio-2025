@@ -14,62 +14,78 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "Interactive Portfolio 2025",
     description:
-      "A full-stack e-commerce solution with real-time inventory management, secure payment processing, and comprehensive admin dashboard. Features include user authentication, product search, shopping cart, order tracking, and analytics.",
+      "A modern, interactive portfolio website built with Next.js, Tailwind CSS and TypeScript, featuring 3D elements, smooth animations, and an immersive user experience. This project serves as both a showcase of my work and a learning journey into Three.js and advanced web technologies.",
+    technologies: [
+      "Next.js 14",
+      "TypeScript",
+      "Three.js",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Leaflet Maps",
+      "React",
+    ],
+    imageUrl: "/images/projects/portfolio-mockup.jpg",
+    githubUrl: "https://github.com/yourusername/nextjs-portfolio-2025",
+    liveUrl: "https://gayandissanayake.dev",
+    category: "Portfolio & Learning",
+    highlights: [
+      "3D interactive elements with Three.js",
+      "Responsive design with smooth animations",
+      "Interactive maps integration with Leaflet",
+      "Modern UI/UX with Tailwind CSS",
+      "Performance optimized with Next.js 14",
+      "School journey storytelling page",
+    ],
+  },
+  {
+    title: "TERAA Digital Archive",
+    description:
+      "A comprehensive digital archive project for the University of Waikato, managing TB of historical data using Greenstone Digital Library. Includes a responsive WordPress website built from Figma designs, representing a significant cultural preservation initiative for New Zealand heritage.",
+    technologies: [
+      "Greenstone Digital Library",
+      "WordPress",
+      "Figma",
+      "JavaScript",
+      "Trello",
+      "Documentation",
+    ],
+    imageUrl: "/images/projects/teraa-mockup.jpg",
+    liveUrl: "https://teraa.co.nz/",
+    category: "Cultural Heritage & Archives",
+    highlights: [
+      "Managing TB of historical data",
+      "Greenstone Digital Library implementation",
+      "Custom WordPress theme development",
+      "Figma to WordPress conversion",
+      "Client communication and requirements gathering",
+      "New Zealand cultural heritage preservation",
+    ],
+  },
+  {
+    title: "Pet Social Media Platform",
+    description:
+      "A full-stack social media platform designed for pet owners, featuring real-time chat functionality, user profiles, and social interactions. Built during my first trimester of Masters studies, showcasing modern web development practices with a complete tech stack.",
     technologies: [
       "Next.js",
       "TypeScript",
-      "PostgreSQL",
-      "Stripe API",
-      "AWS",
-      "Tailwind CSS",
-    ],
-    imageUrl: "/images/projects/ecommerce-mockup.jpg",
-    githubUrl: "https://github.com/yourusername/ecommerce-platform",
-    category: "Full-Stack Application",
-    highlights: [
-      "Real-time inventory synchronization",
-      "Secure payment gateway integration",
-      "Advanced search and filtering",
-      "Responsive admin dashboard",
-    ],
-  },
-  {
-    title: "Task Management System",
-    description:
-      "A collaborative project management tool inspired by modern productivity apps. Features include team workspaces, real-time collaboration, task dependencies, time tracking, and detailed analytics with beautiful data visualizations.",
-    technologies: [
-      "React",
-      "Node.js",
-      "Socket.io",
+      "NestJS",
       "MongoDB",
-      "Express",
-      "Chart.js",
+      "Socket.io",
+      "MUI",
+      "JWT Authentication",
     ],
-    imageUrl: "/images/projects/taskmanager-mockup.jpg",
-    githubUrl: "https://github.com/yourusername/task-manager",
-    category: "Collaboration Tool",
+    imageUrl: "/images/projects/pet-social-mockup.jpg",
+    githubUrl: "https://github.com/yourusername/pet-social-platform",
+    category: "Full-Stack Social Platform",
     highlights: [
-      "Real-time team collaboration",
-      "Advanced task dependencies",
-      "Time tracking & analytics",
-      "Intuitive drag-and-drop interface",
-    ],
-  },
-  {
-    title: "Weather Analytics Dashboard",
-    description:
-      "An interactive weather data visualization platform that aggregates data from multiple APIs to provide comprehensive weather insights. Features predictive analytics, historical data comparison, and customizable alert systems.",
-    technologies: ["Vue.js", "Python", "FastAPI", "D3.js", "Redis", "Docker"],
-    imageUrl: "/images/projects/weather-dashboard-mockup.jpg",
-    githubUrl: "https://github.com/yourusername/weather-dashboard",
-    category: "Data Visualization",
-    highlights: [
-      "Multi-source data aggregation",
-      "Predictive weather modeling",
-      "Interactive data visualizations",
-      "Customizable alert system",
+      "Real-time chat with Socket.io",
+      "JWT-based authentication system",
+      "MongoDB database design",
+      "RESTful API with NestJS",
+      "Responsive social media interface",
+      "University coursework project",
     ],
   },
 ];
@@ -268,7 +284,9 @@ export default function ProjectsSection() {
                           <p className="text-sm font-mono">
                             {project.title} Preview
                           </p>
-                          <p className="text-xs mt-1">Coming Soon</p>
+                          <p className="text-xs mt-1">
+                            Screenshots Coming Soon
+                          </p>
                         </div>
                       </div>
                       {/* Overlay */}
@@ -348,6 +366,31 @@ export default function ProjectsSection() {
                               </svg>
                               <span className="text-sm font-mono">
                                 View Code
+                              </span>
+                            </a>
+                          )}
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-cyan-200 hover:text-cyan-100 transition-colors"
+                            >
+                              <svg
+                                className="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                />
+                              </svg>
+                              <span className="text-sm font-mono">
+                                Live Demo
                               </span>
                             </a>
                           )}
