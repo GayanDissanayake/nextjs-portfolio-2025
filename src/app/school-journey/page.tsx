@@ -12,19 +12,28 @@ interface ImageCarouselProps {
 
 const storyImages = {
   school: {
-    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
+    images: ["/images/school/royal-2.jpeg", "/images/school/royal-1.jpeg"],
     title: "Royal College, Colombo, Sri Lanka",
   },
   cricket: {
-    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
+    images: [
+      "/images/school/cricket-3.jpeg",
+      "/images/school/cricket-5.jpeg",
+      "/images/school/cricket-6.jpeg",
+      "/images/school/cricket-8.jpeg",
+    ],
     title: "Cricket Journey",
   },
   prefect: {
-    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
+    images: [
+      "/images/school/prefect-1.jpeg",
+      "/images/school/cricket-7.jpeg",
+      "/images/school/cricket-2.jpeg",
+    ],
     title: "Leadership Moments",
   },
   bigmatch: {
-    images: ["/images/profile/beach.jpeg", "/images/profile/beach.jpeg"],
+    images: ["/images/school/cricket-4.jpeg", "/images/school/cricket-1.jpeg"],
     title: "Battle of the Blues",
   },
 };
