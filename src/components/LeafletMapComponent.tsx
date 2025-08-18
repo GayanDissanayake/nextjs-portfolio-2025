@@ -28,29 +28,29 @@ interface TravelLocation {
 const travelLocations: TravelLocation[] = [
   {
     id: "1",
-    name: "Paris",
-    country: "France",
-    coordinates: [48.8566, 2.3522],
-    description: "The City of Light with iconic Eiffel Tower",
-    visitDate: "2023-06",
+    name: "Home Accross oceans",
+    country: "Sri Lanka",
+    coordinates: [6.89423, 79.859294],
+    description: "The City where I was born & raised",
+    visitDate: "1998 - 2024",
     type: "city",
   },
   {
     id: "2",
-    name: "Tokyo",
-    country: "Japan",
-    coordinates: [35.6762, 139.6503],
-    description: "Modern metropolis with rich cultural heritage",
-    visitDate: "2023-08",
+    name: "Hamilton",
+    country: "New Zealand",
+    coordinates: [-37.78549958985175, 175.318363355098883],
+    description: "Where I'm currenly residing",
+    visitDate: "2024 - present",
     type: "city",
   },
   {
     id: "3",
-    name: "New York",
-    country: "USA",
-    coordinates: [40.7128, -74.006],
-    description: "The Big Apple - bustling financial and cultural hub",
-    visitDate: "2023-10",
+    name: "Melbourne",
+    country: "Australia",
+    coordinates: [-37.897072, 145.094135],
+    description: "visiting family",
+    visitDate: "2019, 2020, 2022, 2023, 2024",
     type: "city",
   },
   {
@@ -64,21 +64,49 @@ const travelLocations: TravelLocation[] = [
   },
   {
     id: "5",
-    name: "London",
-    country: "United Kingdom",
-    coordinates: [51.5074, -0.1278],
-    description: "Historic capital with modern attractions",
-    visitDate: "2024-03",
+    name: "Adelaide",
+    country: "Australia",
+    coordinates: [-34.9285, 138.6007],
+    description: "City of churches with beautiful hills and wine regions",
+    visitDate: "2024",
     type: "city",
   },
   {
     id: "6",
-    name: "Machu Picchu",
-    country: "Peru",
-    coordinates: [-13.1631, -72.545],
-    description: "Ancient Incan citadel in the Andes Mountains",
-    visitDate: "2024-05",
+    name: "Hanoi",
+    country: "Vietnam",
+    coordinates: [21.0285, 105.8542],
+    description: "Vietnam's capital with rich history and street food culture",
+    visitDate: "2024",
+    type: "city",
+  },
+  {
+    id: "7",
+    name: "Ho Chi Minh City",
+    country: "Vietnam",
+    coordinates: [10.8231, 106.6297],
+    description: "Bustling metropolis and economic center of Vietnam",
+    visitDate: "2024",
+    type: "city",
+  },
+  {
+    id: "8",
+    name: "Petronas Twin Towers",
+    country: "Malaysia",
+    coordinates: [3.1578, 101.7118],
+    description: "Iconic twin skyscrapers in the heart of Kuala Lumpur",
+    visitDate: "2024",
     type: "landmark",
+  },
+  {
+    id: "9",
+    name: "Singapore",
+    country: "Singapore",
+    coordinates: [1.3521, 103.8198],
+    description:
+      "Modern city-state known for Gardens by the Bay and Marina Bay",
+    visitDate: "2024",
+    type: "city",
   },
 ];
 
@@ -87,9 +115,6 @@ export default function LeafletMapComponent() {
   const mapInstanceRef = useRef<L.Map | null>(null);
   const [selectedLocation, setSelectedLocation] =
     useState<TravelLocation | null>(null);
-  const [mapStyle, setMapStyle] = useState<"street" | "satellite" | "terrain">(
-    "street"
-  );
 
   useEffect(() => {
     if (!mapRef.current || mapInstanceRef.current) return;
@@ -112,42 +137,21 @@ export default function LeafletMapComponent() {
 
     mapInstanceRef.current = map;
 
-    // Add tile layers
-    const tileLayers = {
-      street: L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          attribution: "© OpenStreetMap contributors",
-          noWrap: true, // Prevent world repetition
-          bounds: [
-            [-90, -180], // Southwest coordinates
-            [90, 180], // Northeast coordinates
-          ],
-        }
-      ),
-      satellite: L.tileLayer(
-        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        {
-          attribution: "© Esri & contributors",
-          noWrap: true, // Prevent world repetition
-          bounds: [
-            [-90, -180], // Southwest coordinates
-            [90, 180], // Northeast coordinates
-          ],
-        }
-      ),
-      terrain: L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-        attribution: "© OpenTopoMap contributors",
+    // Add tile layer
+    const streetLayer = L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        attribution: "© OpenStreetMap contributors",
         noWrap: true, // Prevent world repetition
         bounds: [
           [-90, -180], // Southwest coordinates
           [90, 180], // Northeast coordinates
         ],
-      }),
-    };
+      }
+    );
 
-    // Add default layer
-    tileLayers.street.addTo(map);
+    // Add street layer to map
+    streetLayer.addTo(map);
 
     // Create custom icons for different location types
     const createCustomIcon = (type: string) => {
@@ -194,10 +198,6 @@ export default function LeafletMapComponent() {
       });
     });
 
-    // Store layers for style switching
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (map as any).tileLayers = tileLayers;
-
     return () => {
       if (mapInstanceRef.current) {
         mapInstanceRef.current.remove();
@@ -205,25 +205,6 @@ export default function LeafletMapComponent() {
       }
     };
   }, []);
-
-  const changeMapStyle = (style: "street" | "satellite" | "terrain") => {
-    if (!mapInstanceRef.current) return;
-
-    const map = mapInstanceRef.current;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const tileLayers = (map as any).tileLayers;
-
-    // Remove current layer
-    map.eachLayer((layer) => {
-      if (layer instanceof L.TileLayer) {
-        map.removeLayer(layer);
-      }
-    });
-
-    // Add new layer
-    tileLayers[style].addTo(map);
-    setMapStyle(style);
-  };
 
   const flyToLocation = (location: TravelLocation) => {
     if (!mapInstanceRef.current) return;
@@ -254,21 +235,8 @@ export default function LeafletMapComponent() {
           Explore my journey around the world using Leaflet
         </p>
 
-        {/* Map Style Controls */}
-        <div className="flex justify-center mt-4 space-x-2">
-          {(["street", "satellite", "terrain"] as const).map((style) => (
-            <button
-              key={style}
-              onClick={() => changeMapStyle(style)}
-              className={`px-4 py-2 rounded-lg capitalize transition-colors ${
-                mapStyle === style
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-              }`}
-            >
-              {style}
-            </button>
-          ))}
+        {/* Navigation Controls */}
+        <div className="flex justify-center mt-4">
           <button
             onClick={resetMapView}
             className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors"
