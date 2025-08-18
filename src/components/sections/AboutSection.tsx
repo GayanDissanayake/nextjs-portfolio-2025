@@ -33,7 +33,7 @@ const personalStories = [
     title: "🌍 Travel Adventures",
     description: "Places I've been, cultures I've experienced",
     icon: "✈️",
-    coming: false,
+    coming: true,
   },
   {
     id: "hobbies",
