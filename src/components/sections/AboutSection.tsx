@@ -151,7 +151,7 @@ export default function AboutSection() {
                 <div className="relative">
                   <div className="w-full aspect-square rounded-2xl overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
                     <Image
-                      src="/images/profile/beach.jpeg"
+                      src="/images/profile/profile.jpeg"
                       alt="Gayan Dissanayake - The person behind the code"
                       width={400}
                       height={400}
