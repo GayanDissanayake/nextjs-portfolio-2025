@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import ScrollAnimation from "../ScrollAnimation";
 
 interface Project {
@@ -26,9 +27,9 @@ const projects: Project[] = [
       "Leaflet Maps",
       "React",
     ],
-    imageUrl: "/images/projects/portfolio-mockup.jpg",
-    githubUrl: "https://github.com/yourusername/nextjs-portfolio-2025",
-    liveUrl: "https://gayandissanayake.dev",
+    imageUrl: "/images/projects/portfolio.png",
+    githubUrl: "https://github.com/GayanDissanayake/nextjs-portfolio-2025",
+    liveUrl: "https://gayan-dissanayake-portfolio.vercel.app/",
     category: "Portfolio & Learning",
     highlights: [
       "3D interactive elements with Three.js",
@@ -51,7 +52,7 @@ const projects: Project[] = [
       "Trello",
       "Documentation",
     ],
-    imageUrl: "/images/projects/teraa-mockup.jpg",
+    imageUrl: "/images/projects/teraa-2.png",
     liveUrl: "https://teraa.co.nz/",
     category: "Cultural Heritage & Archives",
     highlights: [
@@ -76,8 +77,9 @@ const projects: Project[] = [
       "MUI",
       "JWT Authentication",
     ],
-    imageUrl: "/images/projects/pet-social-mockup.jpg",
-    githubUrl: "https://github.com/yourusername/pet-social-platform",
+    imageUrl: "/images/projects/pet-social-1.png",
+    githubUrl: "https://github.com/GayanDissanayake/pet-social-media-frontend",
+    liveUrl: "https://pet-social-media-frontend.vercel.app/",
     category: "Full-Stack Social Platform",
     highlights: [
       "Real-time chat with Socket.io",
@@ -265,43 +267,28 @@ export default function ProjectsSection() {
                 <div key={index} className="w-full flex-shrink-0">
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-cyan-900/30 border border-cyan-600/40 rounded-xl overflow-hidden hover:border-cyan-500/70 transition-all duration-300 min-h-[500px] lg:min-h-[600px]">
                     {/* Project Image */}
-                    <div className="relative h-64 lg:h-96 bg-gradient-to-br from-cyan-900/50 to-cyan-800/30">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center text-cyan-300">
-                          <svg
-                            className="w-16 h-16 mx-auto mb-4 opacity-50"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={1}
-                              d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2z"
-                            />
-                          </svg>
-                          <p className="text-sm font-mono">
-                            {project.title} Preview
-                          </p>
-                          <p className="text-xs mt-1">
-                            Screenshots Coming Soon
-                          </p>
-                        </div>
-                      </div>
+                    <div className="relative h-64 lg:h-full bg-gradient-to-br from-cyan-900/50 to-cyan-800/30">
+                      <Image
+                        src={project.imageUrl}
+                        alt={`${project.title} screenshot`}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 208px) 100vw, 50vw"
+                      />
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 via-transparent to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 via-transparent to-transparent"></div>
+
+                      {/* Project Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-cyan-900/80 backdrop-blur-sm text-cyan-100 text-xs px-3 py-1 rounded-full font-mono border border-cyan-600/40">
+                          {project.category}
+                        </span>
+                      </div>
                     </div>
 
                     {/* Project Content */}
                     <div className="p-8 lg:p-12 flex flex-col justify-between min-h-[400px] lg:min-h-[500px]">
                       <div>
-                        <div className="mb-4">
-                          <span className="text-cyan-200 font-mono text-sm">
-                            {project.category}
-                          </span>
-                        </div>
-
                         <h3 className="text-2xl lg:text-3xl font-bold text-cyan-100 mb-4">
                           {project.title}
                         </h3>
