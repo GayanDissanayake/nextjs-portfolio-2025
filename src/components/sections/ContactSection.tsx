@@ -130,7 +130,7 @@ export default function ContactSection() {
                     Sending...
                   </div>
                 ) : (
-                  "Send Message 🚀"
+                  "Coming Soon 🚀"
                 )}
               </button>
             </form>
