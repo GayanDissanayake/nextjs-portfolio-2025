@@ -328,7 +328,7 @@ export default function ProjectsSection() {
                             {project.technologies.map((tech, techIndex) => (
                               <span
                                 key={techIndex}
-                                className="bg-cyan-800/30 text-cyan-200 text-xs px-3 py-1 rounded-full font-mono"
+                                className="bg-cyan-800/30 text-yellow-300 text-xs px-3 py-1 rounded-full font-mono border border-yellow-300/20 hover:border-yellow-300/40 transition-colors"
                               >
                                 {tech}
                               </span>

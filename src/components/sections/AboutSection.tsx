@@ -197,7 +197,7 @@ export default function AboutSection() {
                 >
                   {/* Coming Soon Badge */}
                   {story.coming && (
-                    <div className="absolute top-2 right-2 bg-teal-500 text-teal-950 text-xs px-2 py-1 rounded-full font-mono">
+                    <div className="absolute top-2 right-2 bg-green-400/10 text-green-400 text-xs px-2 py-1 rounded-full font-mono border border-yellow-300/20">
                       Coming Soon
                     </div>
                   )}

@@ -310,7 +310,7 @@ export default function ExperienceSection() {
                     <h3 className="text-2xl font-bold text-teal-100">
                       {currentExperience.title}
                     </h3>
-                    <span className="text-xs font-mono text-teal-200 bg-teal-800/30 px-3 py-1 rounded-full">
+                    <span className="text-xs font-mono bg-green-400/10 text-green-400 px-3 py-1 rounded-full border border-yellow-300/20">
                       {currentExperience.type}
                     </span>
                   </div>
@@ -337,7 +337,7 @@ export default function ExperienceSection() {
                   {currentExperience.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-teal-800/30 text-teal-200 text-sm px-3 py-1 rounded-lg font-mono"
+                      className="bg-cyan-800/30 text-yellow-300 text-sm px-3 py-1 rounded-lg font-mono border border-yellow-300/20"
                     >
                       {tech}
                     </span>
