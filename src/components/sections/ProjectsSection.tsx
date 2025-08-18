@@ -274,6 +274,7 @@ export default function ProjectsSection() {
                         fill
                         className="object-contain"
                         sizes="(max-width: 208px) 100vw, 50vw"
+                        priority={index === 0}
                       />
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 via-transparent to-transparent"></div>

@@ -142,8 +142,11 @@ export default function ContactSection() {
               </p>
               <div className="flex justify-center space-x-6">
                 <a
-                  href="mailto:gayandsasankadissanayake@gmail.com"
-                  className="flex items-center space-x-2 text-gray-400 hover:text-beige-accent transition-colors group"
+                  href="mailto:gayansasankadissanayake@gmail.com"
+                  className="flex items-center space-x-2 text-gray-400 hover:text-beige-accent transition-colors group cursor-pointer"
+                  onClick={(e) =>
+                    console.log("Email link clicked", e.defaultPrevented)
+                  }
                 >
                   <svg
                     className="w-5 h-5 group-hover:scale-110 transition-transform"

@@ -127,7 +127,7 @@ export default function Sidebar({
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/gayansasankadissanayake/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:!text-amber-400 transition-colors duration-300 transform hover:-translate-y-1"
