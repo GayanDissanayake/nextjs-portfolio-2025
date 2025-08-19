@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import ScrollAnimation from "../ScrollAnimation";
 import StaggeredAnimation from "../StaggeredAnimation";
 
@@ -65,8 +65,117 @@ const personalStories = [
   },
 ];
 
+interface Image {
+  src: string;
+  alt: string;
+}
+
+const images: Image[] = [
+  {
+    src: "/images/profile/profile.jpeg",
+    alt: "With my coding companion back home",
+  },
+  {
+    src: "/images/profile/profile-photo.jpg",
+    alt: "A cool dude I met in Rotorua, New Zealand",
+  },
+  {
+    src: "/images/profile/image.png",
+    alt: "One of my favourite things in the world, Sunsets",
+  },
+  {
+    src: "/images/school/cricket-2.jpeg",
+    alt: "At the Battle of the Blues while being supported by my fellow Prefects",
+  },
+];
+
 export default function AboutSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
+  const [dragOffSet, setDragOffSet] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    // setIsAutoPlaying(false);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  const handleStart = (clientX: number) => {
+    setIsDragging(true);
+    setDragStart(clientX);
+    setDragOffSet(0);
+  };
+
+  const handleMove = (clientX: number) => {
+    if (!isDragging) return;
+    const offset = clientX - dragStart;
+    setDragOffSet(offset);
+  };
+
+  const handleEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    const threshold = 100;
+    if (Math.abs(dragOffSet) > threshold) {
+      if (dragOffSet > 0) {
+        goToPrevious();
+      } else {
+        goToNext();
+      }
+    }
+    setDragOffSet(0);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    handleStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    handleMove(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    handleEnd();
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleMove(e.clientX);
+  };
+
+  const handleMouseUp = () => {
+    handleEnd();
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      handleEnd();
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      goToPrevious();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      goToNext();
+    }
+  };
 
   const handleCardClick = (id: string) => {
     if (id === "advanced-3d") {
@@ -149,24 +258,111 @@ export default function AboutSection() {
             <div className="lg:col-span-1 flex items-center">
               <div className="relative group w-full">
                 <div className="relative">
-                  <div className="w-full aspect-square rounded-2xl overflow-hidden transform transition-transform duration-300 group-hover:scale-105">
-                    <Image
-                      src="/images/profile/profile.jpeg"
-                      alt="Gayan Dissanayake - The person behind the code"
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Fun overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                      <p className="text-beige text-sm font-mono">
-                        📍 Somewhere awesome in New Zealand
-                      </p>
+                  {/* <div className="relative"> */}
+                  <button
+                    onClick={goToPrevious}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-cyan-900/30 border border-cyan-600/40 rounded-full flex items-center justify-center hover:border-cyan-500/70 hover:bg-cyan-800/40 transition-all duration-300 group"
+                    aria-label="Previous image"
+                  >
+                    <svg
+                      className="w-5 h-5 text-cyan-200 group-hover:text-cyan-100 transition-colors"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={goToNext}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-cyan-900/30 border border-cyan-600/40 rounded-full flex items-center justify-center hover:border-cyan-500/70 hover:bg-cyan-800/40 transition-all duration-300 group"
+                    aria-label="Next image"
+                  >
+                    <svg
+                      className="w-5 h-5 text-cyan-200 group-hover:text-cyan-100 transition-colors"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                  {/* </div> */}
+                  <div
+                    ref={carouselRef}
+                    className="overflow-hidden relative cursor-grab active:cursor-grabbing focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-2xl"
+                    tabIndex={0}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseLeave}
+                    onKeyDown={handleKeyDown}
+                    role="region"
+                    aria-label="Profile image carousel"
+                  >
+                    <div
+                      className={`flex transition-transform duration-500 ease-in-out ${
+                        isDragging ? "transition-none" : ""
+                      }`}
+                      style={{
+                        transform: isDragging
+                          ? `translateX(calc(-${
+                              currentIndex * 100
+                            }% + ${dragOffSet}px))`
+                          : `translateX(-${currentIndex * 100}%)`,
+                        userSelect: "none",
+                      }}
+                    >
+                      {images.map((image, index) => (
+                        <div key={index} className="w-full flex-shrink-0">
+                          <div className="w-full aspect-[5/5] rounded-2xl overflow-hidden transform transition-transform duration-300 group-hover:scale-105 relative bg-slate-800">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={400}
+                              height={400}
+                              className="w-full h-full object-contain"
+                            />
+                            {/* Fun overlay on hover */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                              <p className="text-beige text-sm font-mono">
+                                📍 {image.alt}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-beige-accent rounded-full animate-pulse"></div>
-                  <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-green-400/20 rounded-full animate-pulse animation-delay-200"></div>
+
+                  {/* Carousel Indicators */}
+                  <div className="flex justify-center mt-4 space-x-2">
+                    {images.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentIndex(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                          index === currentIndex
+                            ? "bg-cyan-500 scale-110"
+                            : "bg-cyan-700/50 hover:bg-cyan-600/70"
+                        }`}
+                        aria-label={`Go to image ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
