@@ -76,16 +76,16 @@ const images: Image[] = [
     alt: "With my coding companion back home",
   },
   {
+    src: "/images/school/cricket-2.jpeg",
+    alt: "At the Battle of the Blues while being supported by my fellow Prefects",
+  },
+  {
     src: "/images/profile/profile-photo.jpg",
     alt: "A cool dude I met in Rotorua, New Zealand",
   },
   {
     src: "/images/profile/image.png",
     alt: "One of my favourite things in the world, Sunsets",
-  },
-  {
-    src: "/images/school/cricket-2.jpeg",
-    alt: "At the Battle of the Blues while being supported by my fellow Prefects",
   },
 ];
 
