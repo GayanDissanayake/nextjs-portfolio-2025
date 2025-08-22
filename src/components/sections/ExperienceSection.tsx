@@ -22,6 +22,7 @@ const experiences = [
     technologies: [
       "WordPress",
       "Greenstone Digital Library",
+      "React",
       "Figma",
       "GitHub",
       "Trello",
