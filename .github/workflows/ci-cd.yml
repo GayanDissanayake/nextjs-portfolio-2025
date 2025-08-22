@@ -8,7 +8,7 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: ubuntu_latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -26,7 +26,7 @@ jobs:
         run: npm run lint
 
       # - name: Run tests
-      #   run: npm tests
+      #   run: npm test
 
       - name: Build app
         run: npm run build
