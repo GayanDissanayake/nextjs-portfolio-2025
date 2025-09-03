@@ -62,7 +62,7 @@ const techCategories = [
     ],
     description: "Deploying and maintaining scalable applications",
     proficiency: "Intermediate",
-    experience: "2+ years",
+    experience: "1+ years",
   },
   {
     title: "Project Management",

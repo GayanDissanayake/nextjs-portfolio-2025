@@ -4,54 +4,54 @@ import ScrollAnimation from "../ScrollAnimation";
 import { useState, useRef } from "react";
 
 const experiences = [
-  {
-    title: "Software Engineer Intern",
-    company: "University of Waikato, NZ",
-    period: "July 2025 - Present",
-    location: "Hamilton, New Zealand",
-    type: "Full-time",
-    description:
-      "Working in a team of 4 to develop a digital archive with TB of data and a WordPress website, gaining valuable experience in NZ professional culture and client communication.",
-    responsibilities: [
-      "Collaborating directly with clients to finalize project requirements and specifications",
-      "Developing a comprehensive digital archive system using Greenstone Digital Library to handle TB of data",
-      "Building a responsive WordPress website based on provided Figma designs",
-      "Participating in team meetings and project planning sessions with 4-member development team",
-      "Learning New Zealand professional standards and business communication practices",
-    ],
-    technologies: [
-      "WordPress",
-      "Greenstone Digital Library",
-      "React",
-      "Figma",
-      "GitHub",
-      "Trello",
-    ],
-    achievements: [
-      "Successfully established direct client communication channels within first 3 weeks",
-      "Adapting to New Zealand professional culture and work practices",
-      "Coming up with Project architecture reports, Project timelines and architecture diagrams",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company: "EmergeWave Technology LLC",
-    period: "January 2024 - June 2024",
-    location: "USA - Remote",
-    type: "Part-time",
-    description:
-      "Part-time role focused on building responsive web applications using modern tech stack.",
-    responsibilities: [
-      "Built responsive web interfaces using ReactJS, NextJS and TypeScript",
-      "Collaborated with design teams using Figma for pixel-perfect implementations",
-      "Developed backend APIs using NestJS and managed MySQL databases",
-      "Optimized applications for performance and cross-browser compatibility",
-    ],
-    technologies: ["React", "NextJS", "NestJS", "TypeScript", "MySQL", "Figma"],
-    achievements: [
-      "Delivered projects on schedule while maintaining code quality",
-    ],
-  },
+  // {
+  //   title: "Software Engineer Intern",
+  //   company: "University of Waikato, NZ",
+  //   period: "July 2025 - Present",
+  //   location: "Hamilton, New Zealand",
+  //   type: "Full-time",
+  //   description:
+  //     "Working in a team of 4 to develop a digital archive with TB of data and a WordPress website, gaining valuable experience in NZ professional culture and client communication.",
+  //   responsibilities: [
+  //     "Collaborating directly with clients to finalize project requirements and specifications",
+  //     "Developing a comprehensive digital archive system using Greenstone Digital Library to handle TB of data",
+  //     "Building a responsive WordPress website based on provided Figma designs",
+  //     "Participating in team meetings and project planning sessions with 4-member development team",
+  //     "Learning New Zealand professional standards and business communication practices",
+  //   ],
+  //   technologies: [
+  //     "WordPress",
+  //     "Greenstone Digital Library",
+  //     "React",
+  //     "Figma",
+  //     "GitHub",
+  //     "Trello",
+  //   ],
+  //   achievements: [
+  //     "Successfully established direct client communication channels within first 3 weeks",
+  //     "Adapting to New Zealand professional culture and work practices",
+  //     "Coming up with Project architecture reports, Project timelines and architecture diagrams",
+  //   ],
+  // },
+  // {
+  //   title: "Full Stack Developer",
+  //   company: "EmergeWave Technology LLC",
+  //   period: "January 2024 - June 2024",
+  //   location: "USA - Remote",
+  //   type: "Part-time",
+  //   description:
+  //     "Part-time role focused on building responsive web applications using modern tech stack.",
+  //   responsibilities: [
+  //     "Built responsive web interfaces using ReactJS, NextJS and TypeScript",
+  //     "Collaborated with design teams using Figma for pixel-perfect implementations",
+  //     "Developed backend APIs using NestJS and managed MySQL databases",
+  //     "Optimized applications for performance and cross-browser compatibility",
+  //   ],
+  //   technologies: ["React", "NextJS", "NestJS", "TypeScript", "MySQL", "Figma"],
+  //   achievements: [
+  //     "Delivered projects on schedule while maintaining code quality",
+  //   ],
+  // },
   {
     title: "Software Developer",
     company: "Digital Yogin SRL",
