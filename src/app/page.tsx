@@ -7,6 +7,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import TechnicalSection from "@/components/sections/TechnicalSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
+import EducationSection from "@/components/sections/EducationSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SpotlightCursor from "@/components/SpotlightCursor";
 
@@ -23,6 +24,7 @@ export default function Home() {
         "technical",
         "experience",
         "projects",
+        "education",
         "contact",
       ];
       const scrollPosition = window.scrollY + window.innerHeight * 0.3;
@@ -119,7 +121,8 @@ export default function Home() {
                 { id: "technical", label: "Technical", number: "02" },
                 { id: "experience", label: "Experience", number: "03" },
                 { id: "projects", label: "Projects", number: "04" },
-                { id: "contact", label: "Contact", number: "05" },
+                { id: "education", label: "Education", number: "05" },
+                { id: "contact", label: "Contact", number: "06" },
               ].map((item) => (
                 <button
                   key={item.id}
@@ -159,6 +162,7 @@ export default function Home() {
         <TechnicalSection />
         <ExperienceSection />
         <ProjectsSection />
+        <EducationSection />
         <ContactSection />
       </div>
 

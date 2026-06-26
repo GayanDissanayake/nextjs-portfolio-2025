@@ -4,134 +4,147 @@ import ScrollAnimation from "../ScrollAnimation";
 import { useState, useRef } from "react";
 
 const experiences = [
-  // {
-  //   title: "Software Engineer Intern",
-  //   company: "University of Waikato, NZ",
-  //   period: "July 2025 - Present",
-  //   location: "Hamilton, New Zealand",
-  //   type: "Full-time",
-  //   description:
-  //     "Working in a team of 4 to develop a digital archive with TB of data and a WordPress website, gaining valuable experience in NZ professional culture and client communication.",
-  //   responsibilities: [
-  //     "Collaborating directly with clients to finalize project requirements and specifications",
-  //     "Developing a comprehensive digital archive system using Greenstone Digital Library to handle TB of data",
-  //     "Building a responsive WordPress website based on provided Figma designs",
-  //     "Participating in team meetings and project planning sessions with 4-member development team",
-  //     "Learning New Zealand professional standards and business communication practices",
-  //   ],
-  //   technologies: [
-  //     "WordPress",
-  //     "Greenstone Digital Library",
-  //     "React",
-  //     "Figma",
-  //     "GitHub",
-  //     "Trello",
-  //   ],
-  //   achievements: [
-  //     "Successfully established direct client communication channels within first 3 weeks",
-  //     "Adapting to New Zealand professional culture and work practices",
-  //     "Coming up with Project architecture reports, Project timelines and architecture diagrams",
-  //   ],
-  // },
-  // {
-  //   title: "Full Stack Developer",
-  //   company: "EmergeWave Technology LLC",
-  //   period: "January 2024 - June 2024",
-  //   location: "USA - Remote",
-  //   type: "Part-time",
-  //   description:
-  //     "Part-time role focused on building responsive web applications using modern tech stack.",
-  //   responsibilities: [
-  //     "Built responsive web interfaces using ReactJS, NextJS and TypeScript",
-  //     "Collaborated with design teams using Figma for pixel-perfect implementations",
-  //     "Developed backend APIs using NestJS and managed MySQL databases",
-  //     "Optimized applications for performance and cross-browser compatibility",
-  //   ],
-  //   technologies: ["React", "NextJS", "NestJS", "TypeScript", "MySQL", "Figma"],
-  //   achievements: [
-  //     "Delivered projects on schedule while maintaining code quality",
-  //   ],
-  // },
+  {
+    title: "Front End Engineer (Volunteer)",
+    company: "GDC Consultants Ltd",
+    period: "2026 – Present",
+    location: "Hamilton, New Zealand",
+    type: "Volunteer",
+    description:
+      "Contributing to a UI modernisation project within a small development team, building reusable React components and refactoring legacy code as the product transitions to a new interface.",
+    responsibilities: [
+      "Building reusable React components and refactoring legacy code as the product transitions to a new interface",
+      "Working with React, Bootstrap, Redux Toolkit, and Redux Saga, applying component-driven development practices",
+      "Delivering consistent and maintainable front-end architecture across the modernised product",
+      "Collaborating closely within a small team to ensure quality and continuity during the transition",
+    ],
+    technologies: [
+      "React",
+      "Bootstrap",
+      "Redux Toolkit",
+      "Redux Saga",
+      "TypeScript",
+      "GitHub",
+    ],
+    achievements: [
+      "Actively contributing to a live UI modernisation project in a professional NZ environment",
+      "Applying component-driven development to improve front-end maintainability",
+      "Building real-world Redux Toolkit and Redux Saga experience alongside professional engineers",
+    ],
+  },
+  {
+    title: "Software Development Intern",
+    company: "Auckland ICT Graduate School, University of Waikato",
+    period: "2025",
+    location: "Hamilton, New Zealand",
+    type: "Internship",
+    description:
+      "Delivered full-stack integration work on the Te Ra Māori digital archive, building secure Single Sign-On, role-based access control, and Linux environment configuration.",
+    responsibilities: [
+      "Built secure Single Sign-On using server-side authentication logic with role-based access control",
+      "Configured and managed Linux server environments for the digital archive platform",
+      "Served as a key communicator between the development team and project stakeholders, managing expectation-setting around scope changes",
+      "Collaborated in an Agile team using Trello for sprint management",
+      "Systematically debugged complex environment and authentication issues across the stack",
+    ],
+    technologies: [
+      "Greenstone Digital Library",
+      "WordPress",
+      "Linux",
+      "JavaScript",
+      "Figma",
+      "Trello",
+      "GitHub",
+    ],
+    achievements: [
+      "Delivered full-stack integration work on a live cultural heritage archive serving New Zealand communities",
+      "Successfully led multiple project pivots while keeping stakeholder delivery on track",
+      "Gained valuable experience in NZ professional culture, client communication, and Agile delivery",
+    ],
+  },
   {
     title: "Software Developer",
     company: "Digital Yogin SRL",
-    period: "Nov 2021 - Nov 2023",
-    location: "Italy - Remote",
+    period: "Nov 2021 – Nov 2023",
+    location: "Italy – Remote",
     type: "Full-time",
     description:
-      "Two-year role at a dynamic startup where I mentored junior developers, worked on multiple client projects, and collaborated closely with project managers to deliver diverse solutions.",
+      "Designed and delivered multiple full-stack web applications end-to-end at a dynamic startup, architecting NestJS back-ends, building REST APIs with Prisma ORM, and deploying to production in Agile sprints.",
     responsibilities: [
-      "Mentored junior developers despite not holding a senior position, providing code reviews and technical guidance",
-      "Developed multiple client projects with varying requirements using ReactJS, Material UI, and TypeScript",
-      "Built robust backend solutions using NodeJS for full-stack applications",
-      "Contributed to React Native mobile development projects",
-      "Participated in weekly project meetings and collaborated extensively with project managers",
-      "Worked closely with design teams using Figma to implement pixel-perfect UI/UX",
-      "Used Trello for project management and task tracking across multiple concurrent projects",
-      "Resolved complex bugs and implemented feature enhancements based on client feedback",
-      "Managed application hosting and deployment processes",
+      "Architected NestJS and Node.js back-ends and built REST APIs with Prisma ORM and schema design",
+      "Developed React front ends with custom hooks, Redux and Context API state management, and reusable component libraries",
+      "Integrated third-party services and managed application hosting and deployment processes",
+      "Collaborated across design, product, and engineering — managing sprint reviews, weekly releases, and bug triage",
+      "Built scalable database layers using Firestore, MongoDB, and MySQL for production workloads",
+      "Mentored junior developers through code reviews and technical guidance",
     ],
     technologies: [
       "ReactJS",
-      "Material UI",
+      "NestJS",
       "TypeScript",
       "NodeJS",
-      "React Native",
+      "GraphQL",
+      "Prisma",
+      "MongoDB",
+      "MySQL",
+      "Firestore",
       "Figma",
-      "Trello",
-      "Github",
+      "GitHub",
     ],
     achievements: [
-      "Successfully mentored 3+ junior developers, improving team productivity",
-      "Delivered 3+ client projects with diverse requirements and tech stacks",
-      "Established effective communication workflows with project managers",
-      "Gained expertise in startup environment and agile development practices",
+      "Delivered 3+ client projects with diverse requirements end-to-end, from architecture to production",
+      "Mentored junior developers improving team productivity and code quality",
+      "Established effective Agile workflows in a fully remote international team",
     ],
   },
   {
     title: "Software Developer Intern",
     company: "Mediio Ltd",
-    period: "May 2021 - Oct 2021",
-    location: "South Korea - Remote",
-    type: "Full-time",
+    period: "May 2021 – Oct 2021",
+    location: "South Korea – Remote",
+    type: "Internship",
     description:
-      "Career-starting internship focused on healthcare technology platforms, involving steep learning curve in modern web development.",
+      "Built a responsive doctor-patient consultation platform (Medigrant) using Node.js, GraphQL, ReactJS, Material UI, and AWS S3, delivering a complete working product from design through deployment.",
     responsibilities: [
-      "Developed features for Mediio.net healthcare platform using ReactJS and Material UI",
-      "Contributed to Medigrant application development with focus on user interface",
-      "Built backend functionality using NodeJS for healthcare data management",
-      "Participated in daily standup meetings and agile development processes",
-      "Collaborated with design teams using Figma for healthcare application interfaces",
-      "Debugged and resolved issues in production healthcare applications",
+      "Developed features for the Mediio.net healthcare platform using ReactJS and Material UI",
+      "Built backend functionality using NodeJS and GraphQL for healthcare data management",
+      "Translated UI/UX wireframes into clean, accessible React components with cross-browser compatibility",
+      "Participated in daily standup meetings and Agile development processes",
+      "Debugged and resolved issues in production healthcare applications serving real users",
     ],
-    technologies: ["ReactJS", "NodeJS", "Material UI", "Figma", "GitHub"],
+    technologies: [
+      "ReactJS",
+      "NodeJS",
+      "GraphQL",
+      "Material UI",
+      "AWS S3",
+      "Figma",
+      "GitHub",
+    ],
     achievements: [
-      "Successfully navigated steep learning curve in professional development environment",
-      "Contributed to live healthcare platforms serving real users",
-      "Established foundation in modern web development practices",
-      "Adapted quickly to international remote work culture",
+      "Delivered a complete working product from design through to deployment",
+      "Contributed to live healthcare platforms serving real users under strict deadlines",
+      "Developed a collaborative, feedback-driven working style suited to fast-moving teams",
     ],
   },
   {
     title: "Freelance Frontend Developer",
     company: "Korean Financial Solutions Inc",
-    period: "Jan 2022 - Oct 2022",
-    location: "South Korea - Remote",
+    period: "Jan 2022 – Oct 2022",
+    location: "South Korea – Remote",
     type: "Contract",
     description:
-      "Freelance contract focused on building responsive financial application interfaces with weekly client collaboration.",
+      "Freelance contract building responsive financial application interfaces with weekly client collaboration and pixel-perfect Figma-to-code implementation.",
     responsibilities: [
       "Developed responsive financial application interfaces using ReactJS and TypeScript",
       "Implemented complex UI components using Material UI design system",
       "Collaborated with Korean development teams in weekly standup meetings",
       "Translated Figma designs into pixel-perfect, functional web applications",
-      "Optimized applications for performance in financial services environment",
     ],
     technologies: ["ReactJS", "TypeScript", "Material UI", "Figma"],
     achievements: [
-      "Successfully delivered financial application features on tight deadlines",
-      "Maintained high code quality standards in financial services context",
-      "Established effective communication with international client teams",
+      "Delivered financial application features on tight deadlines with high code quality",
+      "Established effective communication with international client teams across time zones",
     ],
   },
 ];
@@ -160,7 +173,6 @@ export default function ExperienceSection() {
     setExpandedCard(expandedCard === index ? null : index);
   };
 
-  // Touch/Mouse handlers for smooth dragging
   const handleStart = (clientX: number) => {
     setIsDragging(true);
     setDragStart(clientX);
@@ -176,19 +188,13 @@ export default function ExperienceSection() {
   const handleEnd = () => {
     if (!isDragging) return;
     setIsDragging(false);
-
-    const threshold = 100; // Minimum drag distance to trigger slide change
-    if (Math.abs(dragOffset) > threshold) {
-      if (dragOffset > 0) {
-        prevExperience();
-      } else {
-        nextExperience();
-      }
+    if (Math.abs(dragOffset) > 100) {
+      if (dragOffset > 0) prevExperience();
+      else nextExperience();
     }
     setDragOffset(0);
   };
 
-  // Mouse handlers
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     handleStart(e.clientX);
@@ -202,7 +208,6 @@ export default function ExperienceSection() {
     handleEnd();
   };
 
-  // Touch handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     handleStart(e.touches[0].clientX);
   };
@@ -216,6 +221,13 @@ export default function ExperienceSection() {
   };
 
   const currentExperience = experiences[currentIndex];
+
+  const typeColors: Record<string, string> = {
+    Volunteer: "bg-purple-400/10 text-purple-400 border-purple-400/20",
+    Internship: "bg-blue-400/10 text-blue-400 border-blue-400/20",
+    "Full-time": "bg-green-400/10 text-green-400 border-green-400/20",
+    Contract: "bg-amber-400/10 text-amber-400 border-amber-400/20",
+  };
 
   return (
     <section
@@ -233,7 +245,7 @@ export default function ExperienceSection() {
         </ScrollAnimation>
 
         <div className="max-w-4xl mx-auto">
-          {/* Experience Navigation */}
+          {/* Navigation */}
           <ScrollAnimation direction="up" delay={0.2}>
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center space-x-4">
@@ -243,7 +255,6 @@ export default function ExperienceSection() {
                 </span>
                 <div className="h-px bg-teal-600/40 w-16"></div>
               </div>
-
               <div className="flex items-center space-x-4">
                 <button
                   onClick={prevExperience}
@@ -287,7 +298,7 @@ export default function ExperienceSection() {
             </div>
           </ScrollAnimation>
 
-          {/* Current Experience Card */}
+          {/* Experience Card */}
           <ScrollAnimation direction="left" delay={0.3} key={currentIndex}>
             <div
               ref={containerRef}
@@ -304,21 +315,25 @@ export default function ExperienceSection() {
                 transition: isDragging ? "none" : "transform 0.3s ease-out",
               }}
             >
-              {/* Main Info */}
               <div className="flex items-start justify-between mb-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-3">
+                  <div className="flex items-center gap-4 mb-3 flex-wrap">
                     <h3 className="text-2xl font-bold text-teal-100">
                       {currentExperience.title}
                     </h3>
-                    <span className="text-xs font-mono bg-green-400/10 text-green-400 px-3 py-1 rounded-full border border-yellow-300/20">
+                    <span
+                      className={`text-xs font-mono px-3 py-1 rounded-full border ${
+                        typeColors[currentExperience.type] ??
+                        "bg-slate-400/10 text-slate-400 border-slate-400/20"
+                      }`}
+                    >
                       {currentExperience.type}
                     </span>
                   </div>
                   <h4 className="text-xl font-semibold text-teal-200 mb-2">
                     {currentExperience.company}
                   </h4>
-                  <div className="flex items-center gap-4 text-teal-300 font-mono text-sm mb-4">
+                  <div className="flex items-center gap-4 text-teal-300 font-mono text-sm mb-4 flex-wrap">
                     <span>{currentExperience.period}</span>
                     <span>•</span>
                     <span>{currentExperience.location}</span>
@@ -329,15 +344,15 @@ export default function ExperienceSection() {
                 </div>
               </div>
 
-              {/* Technologies Preview */}
+              {/* Technologies */}
               <div className="mb-6">
                 <h5 className="text-teal-100 font-semibold text-sm mb-3">
                   Technologies:
                 </h5>
                 <div className="flex flex-wrap gap-2">
-                  {currentExperience.technologies.map((tech, techIndex) => (
+                  {currentExperience.technologies.map((tech, i) => (
                     <span
-                      key={techIndex}
+                      key={i}
                       className="bg-cyan-800/30 text-yellow-300 text-sm px-3 py-1 rounded-lg font-mono border border-yellow-300/20"
                     >
                       {tech}
@@ -346,16 +361,14 @@ export default function ExperienceSection() {
                 </div>
               </div>
 
-              {/* Expand/Collapse Button */}
+              {/* Expand toggle */}
               <div className="flex justify-center">
                 <button
                   onClick={() => toggleExpanded(currentIndex)}
                   className="flex items-center space-x-2 text-teal-200 hover:text-teal-100 transition-colors duration-300 group"
                 >
                   <span className="font-mono text-sm">
-                    {expandedCard === currentIndex
-                      ? "Show Less"
-                      : "Show Details"}
+                    {expandedCard === currentIndex ? "Show Less" : "Show Details"}
                   </span>
                   <svg
                     className={`w-4 h-4 transition-transform duration-300 ${
@@ -375,50 +388,35 @@ export default function ExperienceSection() {
                 </button>
               </div>
 
-              {/* Expanded Details */}
+              {/* Expanded details */}
               {expandedCard === currentIndex && (
-                <div className="mt-8 pt-8 border-t border-[#192E41]/25 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fadeIn">
-                  {/* Responsibilities */}
+                <div className="mt-8 pt-8 border-t border-teal-700/30 grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <h5 className="text-teal-100 font-semibold text-lg mb-4">
                       Key Responsibilities
                     </h5>
                     <ul className="space-y-3">
-                      {currentExperience.responsibilities.map(
-                        (item, itemIndex) => (
-                          <li
-                            key={itemIndex}
-                            className="flex items-start text-teal-100/90"
-                          >
-                            <span className="text-teal-200 mr-3 mt-1 font-mono text-sm">
-                              ▹
-                            </span>
-                            <span className="leading-relaxed">{item}</span>
-                          </li>
-                        )
-                      )}
+                      {currentExperience.responsibilities.map((item, i) => (
+                        <li key={i} className="flex items-start text-teal-100/90">
+                          <span className="text-teal-200 mr-3 mt-1 font-mono text-sm">
+                            ▹
+                          </span>
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
-
-                  {/* Achievements */}
                   <div>
                     <h5 className="text-teal-100 font-semibold text-lg mb-4">
                       Key Achievements
                     </h5>
                     <ul className="space-y-3">
-                      {currentExperience.achievements.map(
-                        (achievement, achievementIndex) => (
-                          <li
-                            key={achievementIndex}
-                            className="flex items-start text-teal-100/90"
-                          >
-                            <span className="text-teal-300 mr-3 mt-1">✓</span>
-                            <span className="leading-relaxed">
-                              {achievement}
-                            </span>
-                          </li>
-                        )
-                      )}
+                      {currentExperience.achievements.map((achievement, i) => (
+                        <li key={i} className="flex items-start text-teal-100/90">
+                          <span className="text-teal-300 mr-3 mt-1">✓</span>
+                          <span className="leading-relaxed">{achievement}</span>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -426,7 +424,7 @@ export default function ExperienceSection() {
             </div>
           </ScrollAnimation>
 
-          {/* Experience Indicators */}
+          {/* Dot indicators */}
           <ScrollAnimation direction="up" delay={0.4}>
             <div className="flex justify-center space-x-3 mt-8">
               {experiences.map((_, index) => (
@@ -436,10 +434,10 @@ export default function ExperienceSection() {
                     setCurrentIndex(index);
                     setExpandedCard(null);
                   }}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`rounded-full transition-all duration-300 ${
                     currentIndex === index
-                      ? "bg-[#192E41] scale-125"
-                      : "bg-[#616862]/30 hover:bg-[#616862]/50"
+                      ? "w-6 h-3 bg-teal-400"
+                      : "w-3 h-3 bg-teal-700/50 hover:bg-teal-600/70"
                   }`}
                   aria-label={`Go to experience ${index + 1}`}
                 />

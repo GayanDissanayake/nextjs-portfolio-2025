@@ -9,7 +9,8 @@ const navItems = [
   { id: "technical", label: "Technical", number: "02" },
   { id: "experience", label: "Experience", number: "03" },
   { id: "projects", label: "Projects", number: "04" },
-  { id: "contact", label: "Contact", number: "05" },
+  { id: "education", label: "Education", number: "05" },
+  { id: "contact", label: "Contact", number: "06" },
 ];
 
 export default function Sidebar({
@@ -42,8 +43,6 @@ export default function Sidebar({
             </p>
           </button>
 
-          {/* Navigation */}
-          {/* Navigation */}
           <nav className="space-y-4 mt-12">
             {navItems.map((item) => (
               <button

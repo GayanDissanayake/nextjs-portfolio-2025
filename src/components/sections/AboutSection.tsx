@@ -7,60 +7,50 @@ const personalStories = [
   {
     id: "education",
     title: "👑 The Royal Legacy",
-    description: `My School & Cricket journey - Where I, 'Learnt of books and men, and learnt to play the
-              game'`,
-    icon: "🏏",
-    coming: false,
-  },
-  {
-    id: "enhanced-3d-about-me",
-    title: "🌟 Enhanced 3D About Me",
     description:
-      "Immersive 3D experience with my character, pet, and interactive story objects",
-    icon: "🎮",
-    coming: true,
-  },
-
-  {
-    id: "advanced-3d",
-    title: "🎮 Advanced 3D Showcase",
-    description: "Three.js experiments and interactive experiences",
-    icon: "✨",
-    coming: true,
+      "My school and cricket journey at Royal College Colombo — 'Learnt of books and men, and learnt to play the game'",
+    icon: "🏏",
+    href: "/school-journey",
+    coming: false,
   },
   {
     id: "travel",
     title: "🌍 Travel Adventures",
-    description: "Places I've been, cultures I've experienced",
+    description: "Places I've explored, cultures I've experienced across Asia, Europe, and New Zealand",
     icon: "✈️",
-    coming: true,
+    href: "/travel-map",
+    coming: false,
   },
   {
     id: "hobbies",
-    title: "🎨 Hobbies & Passions",
-    description: "What I do when I'm not coding",
+    title: "🏋️ Hobbies & Passions",
+    description: "Cricket, gym, cooking, and all the things I do when I'm not writing code",
     icon: "🎯",
+    href: null,
     coming: true,
   },
   {
     id: "pet",
     title: "🐾 My Furry Friend",
-    description: "Meet my coding companion",
+    description: "Meet the four-legged companion keeping my family company back in Sri Lanka",
     icon: "🐕",
+    href: null,
     coming: true,
   },
   {
     id: "food",
     title: "🍜 Food Adventures",
-    description: "Culinary experiments and favorite dishes",
+    description: "From spicy Sri Lankan curries to sushi to Kiwi classics — and my Creamy Bacon Pasta",
     icon: "👨‍🍳",
+    href: null,
     coming: true,
   },
   {
     id: "experiences",
-    title: "✈️ Life Experiences",
-    description: "Stories that shaped who I am",
-    icon: "🌟",
+    title: "🌟 Life Experiences",
+    description: "Stories from Sri Lanka, Italy, South Korea, New Zealand and everywhere in between",
+    icon: "✈️",
+    href: null,
     coming: true,
   },
 ];
@@ -178,22 +168,9 @@ export default function AboutSection() {
   };
 
   const handleCardClick = (id: string) => {
-    if (id === "advanced-3d") {
-      // Navigate to the advanced 3D showcase
-      window.location.href = "/advanced-3d";
-    } else if (id === "travel") {
-      // Navigate to the interactive travel map
-      window.location.href = "/travel-map";
-    } else if (id === "education") {
-      // Navigate to the school journey page
-      window.location.href = "/school-journey";
-    } else {
-      // For other sections, show coming soon message
-      alert(
-        `Coming soon! This will take you to: ${
-          personalStories.find((story) => story.id === id)?.title
-        }`
-      );
+    const story = personalStories.find((s) => s.id === id);
+    if (story?.href) {
+      window.location.href = story.href;
     }
   };
 
@@ -219,35 +196,29 @@ export default function AboutSection() {
             <div className="space-y-6">
               <div className="text-gray-300 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Hello! I&apos;m Gayan, a full-stack developer and
-                  Master&apos;s student in Information Technology at the
-                  University of Waikato, with a knack for solving
-                  problems—whether it&apos;s untangling a tricky bug in code or
-                  finding the simplest way to tackle life&apos;s challenges. I
-                  love the thrill of cracking a problem, whether it&apos;s
-                  optimizing a ReactJS app or figuring out the most efficient
-                  way to get things done (call it lazy genius, but I always
-                  deliver!).
+                  Hello! I&apos;m Gayan — a full-stack software engineer with a
+                  First-Class Honours Master&apos;s in Information Technology
+                  from the University of Waikato. I have a knack for solving
+                  problems, whether it&apos;s untangling a complex bug, designing
+                  a clean API, or finding the most efficient way to ship
+                  something that actually works.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  When I&apos;m not coding, you&apos;ll catch me smashing
-                  boundaries on the cricket pitch—a passion from my days as a
-                  Sri Lankan school cricketer—or lifting weights at the gym to
-                  stay sharp. I&apos;m all about good vibes with friends,
-                  exploring new places in New Zealand, and chasing the next food
-                  adventure (from spicy Sri Lankan curries to Sushi—my
-                  favourite—to Kiwi classics). I&apos;m a beginner cook, but my
-                  Creamy Bacon Pasta is a crowd-pleaser! Back in Sri Lanka, my
-                  furry best friend (a tail-wagging problem-solver in his own
-                  right) keeps my family company while I study abroad.
+                  When I&apos;m not coding, you&apos;ll find me smashing
+                  boundaries on the cricket pitch — a passion rooted in my days
+                  as a school cricketer at Royal College Colombo — or lifting
+                  weights at the gym to stay sharp. I love good vibes with
+                  friends, exploring New Zealand, and chasing the next food
+                  adventure (from spicy Sri Lankan curries to sushi to Kiwi
+                  classics). Back in Sri Lanka, my furry best friend keeps my
+                  family company while I&apos;m here building things.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  For me, coding and life are about finding smart, efficient
-                  solutions that make an impact. Whether it&apos;s building a
-                  user-friendly Web Application or planning a weekend getaway
-                  with mates, I focus on solutions, not problems, drawing
-                  inspiration from diverse cultures, travel stories, and a good
-                  plate of food.
+                  For me, coding and life share the same philosophy: find the
+                  smartest solution, ship it, and keep improving. Whether
+                  that&apos;s a full-stack web application or a weekend plan with
+                  mates, I focus on outcomes — drawing inspiration from diverse
+                  cultures, travel stories, and a good plate of food.
                 </p>
               </div>
             </div>
@@ -379,43 +350,55 @@ export default function AboutSection() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               staggerDelay={0.15}
             >
-              {personalStories.map((story) => (
-                <div
-                  key={story.id}
-                  className={`relative p-6 rounded-xl border transition-all duration-300 cursor-pointer group safe-hover h-full min-h-[150px] flex flex-col ${
-                    hoveredCard === story.id
-                      ? "border-teal-500/70 bg-teal-800/50 shadow-xl shadow-teal-500/20"
-                      : "border-teal-600/40 bg-teal-900/30 hover:border-teal-500/70 hover:bg-teal-800/40"
-                  }`}
-                  onMouseEnter={() => setHoveredCard(story.id)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                  onClick={() => handleCardClick(story.id)}
-                >
-                  {/* Coming Soon Badge */}
-                  {story.coming && (
-                    <div className="absolute top-2 right-2 bg-green-400/10 text-green-400 text-xs px-2 py-1 rounded-full font-mono border border-yellow-300/20">
-                      Coming Soon
-                    </div>
-                  )}
+              {personalStories.map((story) => {
+                const isClickable = !story.coming && !!story.href;
+                return (
+                  <div
+                    key={story.id}
+                    className={`relative p-6 rounded-xl border transition-all duration-300 h-full min-h-[150px] flex flex-col group ${
+                      isClickable
+                        ? "cursor-pointer hover:border-teal-500/70 hover:bg-teal-800/40 hover:shadow-xl hover:shadow-teal-500/10"
+                        : "cursor-default opacity-70"
+                    } ${
+                      hoveredCard === story.id && isClickable
+                        ? "border-teal-500/70 bg-teal-800/50"
+                        : "border-teal-600/40 bg-teal-900/30"
+                    }`}
+                    onMouseEnter={() => isClickable && setHoveredCard(story.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                    onClick={() => isClickable && handleCardClick(story.id)}
+                  >
+                    {story.coming && (
+                      <div className="absolute top-2 right-2 bg-slate-700/60 text-slate-400 text-xs px-2 py-1 rounded-full font-mono border border-slate-600/40">
+                        Coming Soon
+                      </div>
+                    )}
+                    {!story.coming && (
+                      <div className="absolute top-2 right-2 bg-teal-500/10 text-teal-400 text-xs px-2 py-1 rounded-full font-mono border border-teal-500/20">
+                        Explore →
+                      </div>
+                    )}
 
-                  <div className="flex items-start space-x-4 flex-1">
-                    <div className="text-3xl group-hover:scale-110 transition-transform duration-300">
-                      {story.icon}
+                    <div className="flex items-start space-x-4 flex-1">
+                      <div className={`text-3xl transition-transform duration-300 ${isClickable ? "group-hover:scale-110" : ""}`}>
+                        {story.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className={`font-bold mb-2 transition-colors ${isClickable ? "text-teal-100 group-hover:text-teal-200" : "text-slate-400"}`}>
+                          {story.title}
+                        </h4>
+                        <p className={`text-sm leading-relaxed ${isClickable ? "text-teal-200" : "text-slate-500"}`}>
+                          {story.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-teal-100 mb-2 group-hover:text-teal-200 transition-colors">
-                        {story.title}
-                      </h4>
-                      <p className="text-teal-200 text-sm leading-relaxed">
-                        {story.description}
-                      </p>
-                    </div>
+
+                    {isClickable && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-teal-400/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    )}
                   </div>
-
-                  {/* Hover effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-teal-400/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
-              ))}
+                );
+              })}
             </StaggeredAnimation>
           </div>
         </ScrollAnimation>
@@ -424,16 +407,9 @@ export default function AboutSection() {
         <ScrollAnimation direction="up" duration={0.8} delay={0.8}>
           <div className="text-center">
             <p className="text-gray-400 mb-6">
-              Want to know more about any of these? Click the cards above, or
-              let&apos;s chat about it in an interview!
+              Click the active cards to explore those parts of my story. More
+              coming soon — there&apos;s always more to tell!
             </p>
-            <div className="inline-flex items-center space-x-2 text-beige-accent font-mono text-sm">
-              <span>💡</span>
-              <span>
-                Pro tip: Each section will be interactive and tell a unique
-                story
-              </span>
-            </div>
           </div>
         </ScrollAnimation>
       </div>

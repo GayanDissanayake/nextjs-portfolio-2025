@@ -14,11 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gayan Dissanayake | Full-Stack Developer",
+  title: "Gayan Dissanayake | Full-Stack Software Engineer",
   description:
-    "Full-Stack Developer specializing in React, Next.js, and modern web technologies. Building exceptional digital experiences with clean, efficient code.",
+    "Full-stack software engineer with expertise in React, Next.js, TypeScript, Node.js, NestJS, and AWS. First-Class Honours MIT graduate based in Hamilton, New Zealand.",
   keywords:
-    "Gayan Dissanayake, Full-Stack Developer, React, Next.js, TypeScript, Web Development, Portfolio",
+    "Gayan Dissanayake, Full-Stack Software Engineer, React, Next.js, TypeScript, Node.js, NestJS, AWS, Portfolio, Hamilton, New Zealand",
   authors: [{ name: "Gayan Dissanayake" }],
   creator: "Gayan Dissanayake",
   publisher: "Gayan Dissanayake",
@@ -45,18 +45,18 @@ export const metadata: Metadata = {
     apple: "/favicon-custom.svg",
   },
   openGraph: {
-    title: "Gayan Dissanayake | Full-Stack Developer",
+    title: "Gayan Dissanayake | Full-Stack Software Engineer",
     description:
-      "Full-Stack Developer specializing in React, Next.js, and modern web technologies.",
-    url: "https://gayandissanayake.com",
+      "Full-stack software engineer specialising in React, Next.js, TypeScript, Node.js, and AWS. Based in Hamilton, New Zealand.",
+    url: "https://gayan-dissanayake-portfolio.vercel.app",
     siteName: "Gayan Dissanayake Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gayan Dissanayake | Full-Stack Developer",
+    title: "Gayan Dissanayake | Full-Stack Software Engineer",
     description:
-      "Full-Stack Developer specializing in React, Next.js, and modern web technologies.",
+      "Full-stack software engineer specialising in React, Next.js, TypeScript, Node.js, and AWS.",
   },
 };
 

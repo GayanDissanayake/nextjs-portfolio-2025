@@ -15,6 +15,30 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "eVoting System",
+    description:
+      "Led the Web Application module for a secure, scalable New Zealand online voting system. Built as a group project at the University of Waikato, this platform combines a modern Next.js/TypeScript frontend with a serverless AWS backend — Lambda for compute, DynamoDB for data, SQS for message queuing, and Cognito for identity and access management.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "AWS Lambda",
+      "AWS DynamoDB",
+      "AWS SQS",
+      "AWS Cognito",
+      "TDD",
+    ],
+    imageUrl: "/images/projects/portfolio.png",
+    category: "Full-Stack · AWS Serverless",
+    highlights: [
+      "Led end-to-end ownership of the Web Application module",
+      "Serverless architecture: AWS Lambda, DynamoDB, SQS, and Cognito",
+      "Secure identity management with AWS Cognito",
+      "Delivered under a 10-week deadline using Agile and TDD principles",
+      "Next.js + TypeScript frontend with a clean, accessible UI",
+    ],
+  },
+  {
     title: "Interactive Portfolio 2025",
     description:
       "A modern, interactive portfolio website built with Next.js, Tailwind CSS and TypeScript, featuring 3D elements, smooth animations, and an immersive user experience. This project serves as both a showcase of my work and a learning journey into Three.js and advanced web technologies.",

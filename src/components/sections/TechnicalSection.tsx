@@ -29,7 +29,7 @@ const techCategories = [
       "REST APIs",
       "Express.js",
       "GraphQL",
-      "Python",
+      "C# (learning)",
     ],
     description: "Building robust server-side applications",
     proficiency: "Advanced",
@@ -141,7 +141,7 @@ export default function TechnicalSection() {
               {techCategories.map((category, index) => {
                 // Different color schemes for each card
                 const colorSchemes = [
-                  // 1. Cyan Electric (Frontend)
+                  // 1. Cyan (Frontend)
                   {
                     bg: "bg-cyan-900/30",
                     bgHover: "bg-cyan-800/50",
@@ -149,57 +149,57 @@ export default function TechnicalSection() {
                     borderHover: "border-cyan-500/70",
                     title: "text-cyan-100",
                     desc: "text-cyan-200",
-                    tags: "bg-cyan-700/50 text-cyan-200 border-cyan-600/30",
+                    tags: "bg-cyan-800/50 text-cyan-200 border-cyan-600/30",
                   },
-                  // 2. Cyan Electric (Backend)
+                  // 2. Violet (Backend)
                   {
-                    bg: "bg-cyan-900/30",
-                    bgHover: "bg-cyan-800/50",
-                    border: "border-cyan-600/40",
-                    borderHover: "border-cyan-500/70",
-                    title: "text-cyan-100",
-                    desc: "text-cyan-200",
-                    tags: "bg-cyan-700/50 text-cyan-200 border-cyan-600/30",
+                    bg: "bg-violet-900/30",
+                    bgHover: "bg-violet-800/50",
+                    border: "border-violet-600/40",
+                    borderHover: "border-violet-500/70",
+                    title: "text-violet-100",
+                    desc: "text-violet-200",
+                    tags: "bg-violet-800/50 text-violet-200 border-violet-600/30",
                   },
-                  // 3. Cyan Electric (Database)
+                  // 3. Emerald (Database)
                   {
-                    bg: "bg-cyan-900/30",
-                    bgHover: "bg-cyan-800/50",
-                    border: "border-cyan-600/40",
-                    borderHover: "border-cyan-500/70",
-                    title: "text-cyan-100",
-                    desc: "text-cyan-200",
-                    tags: "bg-cyan-700/50 text-cyan-200 border-cyan-600/30",
+                    bg: "bg-emerald-900/30",
+                    bgHover: "bg-emerald-800/50",
+                    border: "border-emerald-600/40",
+                    borderHover: "border-emerald-500/70",
+                    title: "text-emerald-100",
+                    desc: "text-emerald-200",
+                    tags: "bg-emerald-800/50 text-emerald-200 border-emerald-600/30",
                   },
-                  // 4. Cyan Electric (Cloud & DevOps)
+                  // 4. Amber (Cloud & DevOps)
                   {
-                    bg: "bg-cyan-900/30",
-                    bgHover: "bg-cyan-800/50",
-                    border: "border-cyan-600/40",
-                    borderHover: "border-cyan-500/70",
-                    title: "text-cyan-100",
-                    desc: "text-cyan-200",
-                    tags: "bg-cyan-700/50 text-cyan-200 border-cyan-600/30",
+                    bg: "bg-amber-900/30",
+                    bgHover: "bg-amber-800/50",
+                    border: "border-amber-600/40",
+                    borderHover: "border-amber-500/70",
+                    title: "text-amber-100",
+                    desc: "text-amber-200",
+                    tags: "bg-amber-800/50 text-amber-200 border-amber-600/30",
                   },
-                  // 5. Cyan Electric (Project Management)
+                  // 5. Rose (Project Management)
                   {
-                    bg: "bg-cyan-900/30",
-                    bgHover: "bg-cyan-800/50",
-                    border: "border-cyan-600/40",
-                    borderHover: "border-cyan-500/70",
-                    title: "text-cyan-100",
-                    desc: "text-cyan-200",
-                    tags: "bg-cyan-700/50 text-cyan-200 border-cyan-600/30",
+                    bg: "bg-rose-900/30",
+                    bgHover: "bg-rose-800/50",
+                    border: "border-rose-600/40",
+                    borderHover: "border-rose-500/70",
+                    title: "text-rose-100",
+                    desc: "text-rose-200",
+                    tags: "bg-rose-800/50 text-rose-200 border-rose-600/30",
                   },
-                  // 6. Cyan Electric (Tools & Others)
+                  // 6. Slate-blue (Tools & Others)
                   {
-                    bg: "bg-cyan-900/30",
-                    bgHover: "bg-cyan-800/50",
-                    border: "border-cyan-600/40",
-                    borderHover: "border-cyan-500/70",
-                    title: "text-cyan-100",
-                    desc: "text-cyan-200",
-                    tags: "bg-cyan-700/50 text-cyan-200 border-cyan-600/30",
+                    bg: "bg-sky-900/30",
+                    bgHover: "bg-sky-800/50",
+                    border: "border-sky-600/40",
+                    borderHover: "border-sky-500/70",
+                    title: "text-sky-100",
+                    desc: "text-sky-200",
+                    tags: "bg-sky-800/50 text-sky-200 border-sky-600/30",
                   },
                 ];
 
@@ -275,9 +275,9 @@ export default function TechnicalSection() {
             </h3>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               {[
-                "Greenstone Digital Library",
-                "WordPress",
-                "Three.js",
+                "C# / .NET",
+                "ASP.NET Core",
+                "Three.js / WebGL",
                 "Microservices",
               ].map((tech, index) => (
                 <span
