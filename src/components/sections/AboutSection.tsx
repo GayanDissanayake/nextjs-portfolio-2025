@@ -81,6 +81,7 @@ const images: Image[] = [
 
 export default function AboutSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [showAllStories, setShowAllStories] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(0);
@@ -196,12 +197,14 @@ export default function AboutSection() {
             <div className="space-y-6">
               <div className="text-gray-300 space-y-4">
                 <p className="text-lg leading-relaxed">
-                  Hello! I&apos;m Gayan — a full-stack software engineer with a
-                  First-Class Honours Master&apos;s in Information Technology
-                  from the University of Waikato. I have a knack for solving
-                  problems, whether it&apos;s untangling a complex bug, designing
-                  a clean API, or finding the most efficient way to ship
-                  something that actually works.
+                  Hello! I&apos;m Gayan — a software &amp; IT professional with
+                  a First-Class Honours Master&apos;s in Information Technology
+                  from the University of Waikato. I build and support software
+                  across the stack, and I&apos;m just as comfortable working
+                  directly with the people who use it — gathering
+                  requirements, troubleshooting issues, and writing the
+                  documentation that keeps a system running after I&apos;ve
+                  moved on.
                 </p>
                 <p className="text-lg leading-relaxed">
                   When I&apos;m not coding, you&apos;ll find me smashing
@@ -347,10 +350,17 @@ export default function AboutSection() {
               Explore Different Facets of My Life
             </h3>
             <StaggeredAnimation
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${
+                showAllStories
+                  ? "lg:grid-cols-3"
+                  : "lg:grid-cols-2 max-w-2xl mx-auto"
+              }`}
               staggerDelay={0.15}
             >
-              {personalStories.map((story) => {
+              {(showAllStories
+                ? personalStories
+                : personalStories.filter((story) => !story.coming)
+              ).map((story) => {
                 const isClickable = !story.coming && !!story.href;
                 return (
                   <div
@@ -400,6 +410,17 @@ export default function AboutSection() {
                 );
               })}
             </StaggeredAnimation>
+
+            {!showAllStories && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => setShowAllStories(true)}
+                  className="text-teal-300 hover:text-teal-200 font-mono text-sm underline underline-offset-4 transition-colors"
+                >
+                  Show more life facets
+                </button>
+              </div>
+            )}
           </div>
         </ScrollAnimation>
 
@@ -407,8 +428,7 @@ export default function AboutSection() {
         <ScrollAnimation direction="up" duration={0.8} delay={0.8}>
           <div className="text-center">
             <p className="text-gray-400 mb-6">
-              Click the active cards to explore those parts of my story. More
-              coming soon — there&apos;s always more to tell!
+              Click the active cards to explore those parts of my story.
             </p>
           </div>
         </ScrollAnimation>

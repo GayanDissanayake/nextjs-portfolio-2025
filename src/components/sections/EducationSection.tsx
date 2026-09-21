@@ -12,7 +12,7 @@ const degrees = [
     highlights: [
       "Full-stack social media platform (Next.js, NestJS, MongoDB, Socket.io)",
       "eVoting system with AWS Lambda, DynamoDB, SQS, and Cognito",
-      "Software Development Internship — Te Ra Māori digital archive",
+      "Software Development Internship — Te Rā Māori digital archive",
       "Graduated with First-Class Honours",
     ],
     color: {
@@ -47,6 +47,15 @@ const degrees = [
       icon: "text-cyan-400",
       bullet: "text-cyan-400",
     },
+  },
+];
+
+const certifications = [
+  {
+    title: "Claude Code in Action",
+    issuer: "Anthropic",
+    year: "2026",
+    icon: "📜",
   },
 ];
 
@@ -134,7 +143,7 @@ export default function EducationSection() {
 
         {/* Achievements & Leadership */}
         <ScrollAnimation direction="up" delay={0.5}>
-          <div className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8">
+          <div className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-8 mb-8">
             <h3 className="text-lg font-bold text-slate-100 mb-6">
               Achievements &amp; Leadership
             </h3>
@@ -148,6 +157,33 @@ export default function EducationSection() {
                     </h4>
                     <p className="text-slate-400 text-sm leading-relaxed">
                       {item.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollAnimation>
+
+        {/* Certifications */}
+        <ScrollAnimation direction="up" delay={0.6}>
+          <div className="bg-slate-800/40 border border-slate-700/50 rounded-2xl p-6">
+            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wide mb-4">
+              Certifications
+            </h3>
+            <div className="flex flex-wrap gap-4">
+              {certifications.map((cert, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 bg-slate-900/50 border border-slate-700/50 rounded-xl px-4 py-3"
+                >
+                  <span className="text-xl flex-shrink-0">{cert.icon}</span>
+                  <div>
+                    <p className="font-semibold text-slate-200 text-sm">
+                      {cert.title}
+                    </p>
+                    <p className="text-slate-400 text-xs font-mono">
+                      {cert.issuer} · {cert.year}
                     </p>
                   </div>
                 </div>

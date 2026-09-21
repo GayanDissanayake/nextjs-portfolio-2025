@@ -14,11 +14,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gayan Dissanayake | Full-Stack Software Engineer",
+  title: "Gayan Dissanayake | Software & IT Professional",
   description:
-    "Full-stack software engineer with expertise in React, Next.js, TypeScript, Node.js, NestJS, and AWS. First-Class Honours MIT graduate based in Hamilton, New Zealand.",
+    "Software & IT professional working across development, IT support, and business systems — React, Next.js, TypeScript, Node.js, and AWS. First-Class Honours MIT graduate based in Hamilton, New Zealand.",
   keywords:
-    "Gayan Dissanayake, Full-Stack Software Engineer, React, Next.js, TypeScript, Node.js, NestJS, AWS, Portfolio, Hamilton, New Zealand",
+    "Gayan Dissanayake, Software & IT Professional, Software Development, IT Support, Technical Support, Business Analysis, Requirements Gathering, Systems, React, Next.js, TypeScript, Node.js, AWS, SQL, Portfolio, Hamilton, New Zealand",
   authors: [{ name: "Gayan Dissanayake" }],
   creator: "Gayan Dissanayake",
   publisher: "Gayan Dissanayake",
@@ -45,18 +45,18 @@ export const metadata: Metadata = {
     apple: "/favicon-custom.svg",
   },
   openGraph: {
-    title: "Gayan Dissanayake | Full-Stack Software Engineer",
+    title: "Gayan Dissanayake | Software & IT Professional",
     description:
-      "Full-stack software engineer specialising in React, Next.js, TypeScript, Node.js, and AWS. Based in Hamilton, New Zealand.",
+      "Development · IT Support · Business Systems. Software & IT professional specialising in React, Next.js, TypeScript, Node.js, and AWS. Based in Hamilton, New Zealand.",
     url: "https://gayan-dissanayake-portfolio.vercel.app",
     siteName: "Gayan Dissanayake Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gayan Dissanayake | Full-Stack Software Engineer",
+    title: "Gayan Dissanayake | Software & IT Professional",
     description:
-      "Full-stack software engineer specialising in React, Next.js, TypeScript, Node.js, and AWS.",
+      "Development · IT Support · Business Systems. Software & IT professional specialising in React, Next.js, TypeScript, Node.js, and AWS.",
   },
 };
 

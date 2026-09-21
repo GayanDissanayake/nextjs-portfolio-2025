@@ -1,7 +1,16 @@
 import { useState } from "react";
 import ScrollAnimation from "../ScrollAnimation";
 
-const techCategories = [
+interface TechCategory {
+  title: string;
+  icon: string;
+  technologies: string[];
+  description: string;
+  proficiency: string;
+  experience?: string;
+}
+
+const techCategories: TechCategory[] = [
   {
     title: "Frontend",
     icon: "🎨",
@@ -17,8 +26,8 @@ const techCategories = [
       "JavaScript",
     ],
     description: "Creating beautiful, responsive user interfaces",
-    proficiency: "Expert",
-    experience: "3+ years",
+    proficiency: "Advanced",
+    experience: "~3 years",
   },
   {
     title: "Backend",
@@ -77,8 +86,8 @@ const techCategories = [
       "GitHub Projects",
     ],
     description: "Organizing workflows and team collaboration",
-    proficiency: "Expert",
-    experience: "3+ years",
+    proficiency: "Proficient",
+    experience: "~3 years",
   },
   {
     title: "Tools & Others",
@@ -97,6 +106,54 @@ const techCategories = [
     description: "Essential tools for productive development",
     proficiency: "Expert",
     experience: "3+ years",
+  },
+  {
+    title: "AI & Automation",
+    icon: "🤖",
+    technologies: [
+      "Anthropic API",
+      "LLM Structured Outputs",
+      "Prompt Engineering",
+      "Claude Code",
+      "GitHub Copilot",
+      "Agentic Workflows",
+    ],
+    description: "Building with language models and AI-assisted development tools",
+    proficiency: "Advanced",
+  },
+  {
+    title: "IT Support & Systems",
+    icon: "🖥️",
+    technologies: [
+      "Troubleshooting",
+      "Microsoft 365",
+      "Google Workspace",
+      "Windows",
+      "Linux",
+      "User Access Management",
+      "Single Sign-On",
+      "Role-Based Access Control",
+      "Technical Documentation",
+      "User Training",
+    ],
+    description: "Supporting users and systems, from access control to day-to-day troubleshooting",
+    proficiency: "Proficient",
+  },
+  {
+    title: "Business Analysis",
+    icon: "📊",
+    technologies: [
+      "Requirements Gathering",
+      "Stakeholder Engagement",
+      "Process Improvement",
+      "Technical Documentation",
+      "Data Analysis",
+      "Agile & Scrum",
+      "Jira",
+      "Trello",
+    ],
+    description: "Bridging business needs and technical delivery",
+    proficiency: "Proficient",
   },
 ];
 
@@ -201,6 +258,36 @@ export default function TechnicalSection() {
                     desc: "text-sky-200",
                     tags: "bg-sky-800/50 text-sky-200 border-sky-600/30",
                   },
+                  // 7. Indigo (AI & Automation)
+                  {
+                    bg: "bg-indigo-900/30",
+                    bgHover: "bg-indigo-800/50",
+                    border: "border-indigo-600/40",
+                    borderHover: "border-indigo-500/70",
+                    title: "text-indigo-100",
+                    desc: "text-indigo-200",
+                    tags: "bg-indigo-800/50 text-indigo-200 border-indigo-600/30",
+                  },
+                  // 8. Teal (IT Support & Systems)
+                  {
+                    bg: "bg-teal-900/30",
+                    bgHover: "bg-teal-800/50",
+                    border: "border-teal-600/40",
+                    borderHover: "border-teal-500/70",
+                    title: "text-teal-100",
+                    desc: "text-teal-200",
+                    tags: "bg-teal-800/50 text-teal-200 border-teal-600/30",
+                  },
+                  // 9. Fuchsia (Business Analysis)
+                  {
+                    bg: "bg-fuchsia-900/30",
+                    bgHover: "bg-fuchsia-800/50",
+                    border: "border-fuchsia-600/40",
+                    borderHover: "border-fuchsia-500/70",
+                    title: "text-fuchsia-100",
+                    desc: "text-fuchsia-200",
+                    tags: "bg-fuchsia-800/50 text-fuchsia-200 border-fuchsia-600/30",
+                  },
                 ];
 
                 const colors = colorSchemes[index];
@@ -236,14 +323,18 @@ export default function TechnicalSection() {
                                 ? "bg-green-400/10 text-green-400"
                                 : category.proficiency === "Advanced"
                                 ? "bg-blue-400/10 text-blue-400"
+                                : category.proficiency === "Proficient"
+                                ? "bg-cyan-400/10 text-cyan-400"
                                 : "bg-yellow-400/10 text-yellow-400"
                             }`}
                           >
                             {category.proficiency}
                           </span>
-                          <span className="text-xs text-slate-400 mt-1">
-                            {category.experience}
-                          </span>
+                          {category.experience && (
+                            <span className="text-xs text-slate-400 mt-1">
+                              {category.experience}
+                            </span>
+                          )}
                         </div>
                       </div>
                       <p className={`${colors.desc} text-sm mb-4`}>

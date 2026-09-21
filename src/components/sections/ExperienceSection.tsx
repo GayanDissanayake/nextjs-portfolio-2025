@@ -5,6 +5,37 @@ import { useState, useRef } from "react";
 
 const experiences = [
   {
+    title: "Software Engineer (Volunteer)",
+    company: "Efalata Trust",
+    period: "2026 – Present",
+    location: "Hamilton, New Zealand",
+    type: "Volunteer",
+    description:
+      "Building a student management system for an education trust that had run enrolment, attendance and student records on paper for over a decade. Architected three custom WordPress plugins, designed the relational MySQL schema, and built role-based access across four user groups so administrators, teachers, students and parents each reach only their own records.",
+    responsibilities: [
+      "Architected three custom WordPress plugins to digitise enrolment, attendance and student records",
+      "Designed the relational MySQL schema underpinning the student management system",
+      "Built role-based access control across four user groups — administrators, teachers, students and parents",
+      "Gathered requirements from six non-technical staff and wrote the system documentation",
+      "Trained staff to run the system unaided",
+    ],
+    technologies: [
+      "WordPress",
+      "PHP",
+      "MySQL",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Plugin Development",
+      "Requirements Gathering",
+    ],
+    achievements: [
+      "Replaced over a decade of paper-based enrolment, attendance and student records with a digital system",
+      "Delivered role-based access ensuring each of four user groups reaches only their own records",
+      "Enabled six non-technical staff to operate the system independently through training and documentation",
+    ],
+  },
+  {
     title: "Front End Engineer (Volunteer)",
     company: "GDC Consultants Ltd",
     period: "2026 – Present",
@@ -39,7 +70,7 @@ const experiences = [
     location: "Hamilton, New Zealand",
     type: "Internship",
     description:
-      "Delivered full-stack integration work on the Te Ra Māori digital archive, building secure Single Sign-On, role-based access control, and Linux environment configuration.",
+      "Delivered full-stack integration work on the Te Rā Māori digital archive, building secure Single Sign-On, role-based access control, and Linux environment configuration.",
     responsibilities: [
       "Built secure Single Sign-On using server-side authentication logic with role-based access control",
       "Configured and managed Linux server environments for the digital archive platform",
@@ -60,6 +91,33 @@ const experiences = [
       "Delivered full-stack integration work on a live cultural heritage archive serving New Zealand communities",
       "Successfully led multiple project pivots while keeping stakeholder delivery on track",
       "Gained valuable experience in NZ professional culture, client communication, and Agile delivery",
+    ],
+  },
+  {
+    title: "Customer Service Representative",
+    company: "Mitre 10 MEGA Hamilton",
+    period: "2024 – Present",
+    location: "Hamilton, New Zealand",
+    type: "Part-time",
+    description:
+      "First point of contact for over 300 customer and internal interactions daily across four departments, troubleshooting point-of-sale, scanner and online order faults, escalating to specialist support, and maintaining data accuracy across pricing, ticketing and order systems.",
+    responsibilities: [
+      "First point of contact for 300+ customer and internal interactions daily across four departments",
+      "Troubleshooting point-of-sale, scanner and online order faults",
+      "Escalating unresolved issues to specialist support teams",
+      "Maintaining data accuracy across pricing, ticketing and order systems",
+    ],
+    technologies: [
+      "Point-of-Sale Systems",
+      "Order Management Systems",
+      "Technical Troubleshooting",
+      "Data Accuracy",
+      "Customer Support",
+    ],
+    achievements: [
+      "Sustained high-volume, high-accuracy support across pricing, ticketing and order systems",
+      "Built strong troubleshooting instincts for point-of-sale and systems faults, escalating effectively when needed",
+      "Maintained consistent data accuracy across four departments under daily high interaction volume",
     ],
   },
   {
@@ -227,6 +285,7 @@ export default function ExperienceSection() {
     Internship: "bg-blue-400/10 text-blue-400 border-blue-400/20",
     "Full-time": "bg-green-400/10 text-green-400 border-green-400/20",
     Contract: "bg-amber-400/10 text-amber-400 border-amber-400/20",
+    "Part-time": "bg-orange-400/10 text-orange-400 border-orange-400/20",
   };
 
   return (

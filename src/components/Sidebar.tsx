@@ -34,12 +34,15 @@ export default function Sidebar({
             <h1 className="text-2xl font-bold text-blue-100 mb-2 group-hover:text-amber-300 transition-colors">
               Gayan Dissanayake
             </h1>
-            <h2 className="text-lg text-slate-400 mb-4">
-              Full-Stack Developer
+            <h2 className="text-lg text-slate-400 mb-1">
+              Software &amp; IT Professional
             </h2>
+            <p className="text-xs font-mono text-amber-300/80 tracking-wide mb-4">
+              Development · IT Support · Business Systems
+            </p>
             <p className="text-sm text-slate-300 leading-relaxed">
-              I build exceptional digital experiences using modern web
-              technologies.
+              I build and support software across the stack, and work
+              closely with the people who use it.
             </p>
           </button>
 
@@ -91,27 +94,8 @@ export default function Sidebar({
           </nav>
         </div>
 
-        {/* Bottom Section - Social Links and Resume */}
+        {/* Bottom Section - Social Links */}
         <div className="space-y-6">
-          {/* Resume Button */}
-          <div className="space-y-3">
-            <a
-              href="/documents/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-center border border-amber-400 text-amber-300 px-4 py-2 rounded text-sm hover:bg-amber-400 hover:text-slate-900 transition-all duration-200"
-            >
-              View Resume
-            </a>
-            <a
-              href="/documents/cv.pdf"
-              download="Gayan_Dissanayake_CV.pdf"
-              className="block text-center bg-amber-800/80 text-amber-200 px-4 py-2 rounded text-sm hover:bg-amber-700/90 transition-all duration-200"
-            >
-              Download CV
-            </a>
-          </div>
-
           {/* Social Links */}
           <div className="flex justify-center space-x-6">
             <a

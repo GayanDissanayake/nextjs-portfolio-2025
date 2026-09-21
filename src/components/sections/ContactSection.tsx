@@ -162,7 +162,7 @@ export default function ContactSection() {
               <p className="text-gray-400 text-sm mb-4">Or connect directly:</p>
               <div className="flex justify-center space-x-6">
                 <a
-                  href="mailto:gayansasankadissanayake@gmail.com"
+                  href="mailto:hey.its.gayan@gmail.com"
                   className="flex items-center space-x-2 text-gray-400 hover:text-beige-accent transition-colors group"
                 >
                   <svg
@@ -221,7 +221,7 @@ export default function ContactSection() {
             <span className="text-beige-accent">Next.js 15</span> &{" "}
             <span className="text-beige-accent">Tailwind CSS</span>
           </p>
-          <p>© 2025 Gayan Dissanayake. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Gayan Dissanayake. All rights reserved.</p>
         </footer>
       </div>
     </section>

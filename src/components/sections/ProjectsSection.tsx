@@ -28,7 +28,7 @@ const projects: Project[] = [
       "AWS Cognito",
       "TDD",
     ],
-    imageUrl: "/images/projects/portfolio.png",
+    imageUrl: "/images/projects/evoting-placeholder.svg",
     category: "Full-Stack · AWS Serverless",
     highlights: [
       "Led end-to-end ownership of the Web Application module",
@@ -294,11 +294,16 @@ export default function ProjectsSection() {
                     <div className="relative h-64 lg:h-full bg-gradient-to-br from-cyan-900/50 to-cyan-800/30">
                       <Image
                         src={project.imageUrl}
-                        alt={`${project.title} screenshot`}
+                        alt={
+                          project.imageUrl.endsWith(".svg")
+                            ? `${project.title} graphic`
+                            : `${project.title} screenshot`
+                        }
                         fill
                         className="object-contain"
                         sizes="(max-width: 208px) 100vw, 50vw"
                         priority={index === 0}
+                        unoptimized={project.imageUrl.endsWith(".svg")}
                       />
                       {/* Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 via-transparent to-transparent"></div>

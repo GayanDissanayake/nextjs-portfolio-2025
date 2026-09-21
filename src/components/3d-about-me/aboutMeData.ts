@@ -60,7 +60,7 @@ export const enhancedAboutMeData: AboutMeItem[] = [
     title: "Technology",
     description: "My journey in software development",
     details: [
-      "Full-Stack Developer",
+      "Software & IT Professional",
       "Modern Frameworks",
       "Cloud Architecture",
       "Problem Solver",

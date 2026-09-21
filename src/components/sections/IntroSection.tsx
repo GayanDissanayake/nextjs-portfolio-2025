@@ -44,13 +44,22 @@ export default function IntroSection() {
         </motion.h1>
 
         <motion.h2
-          className="text-xl md:text-2xl lg:text-3xl font-semibold text-slate-400 mb-6"
+          className="text-xl md:text-2xl lg:text-3xl font-semibold text-slate-400 mb-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Full-Stack Software Engineer
+          Software &amp; IT Professional
         </motion.h2>
+
+        <motion.p
+          className="text-beige-accent/90 font-mono text-sm md:text-base tracking-wide mb-6"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
+        >
+          Development · IT Support · Business Systems
+        </motion.p>
 
         <motion.p
           className="text-base lg:text-lg text-gray-300 leading-relaxed max-w-xl mb-8"
@@ -58,10 +67,12 @@ export default function IntroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          I build production-grade web applications across the full stack —
-          from React and Next.js frontends to Node.js and NestJS backends,
-          serverless AWS infrastructure, and everything in between. First-Class
-          Honours MIT graduate, currently based in Hamilton, New Zealand.
+          I build and support software across the stack — from React and
+          Next.js frontends to Node.js and NestJS backends and serverless AWS
+          infrastructure — and I work closely with the people who use it,
+          gathering requirements, troubleshooting issues, and documenting
+          systems along the way. First-Class Honours Master of Information
+          Technology graduate, currently based in Hamilton, New Zealand.
         </motion.p>
 
         <motion.div
@@ -76,14 +87,6 @@ export default function IntroSection() {
           >
             Explore My Work
           </button>
-          <a
-            href="/documents/cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-6 py-3 border border-beige-accent/60 text-beige-accent font-semibold rounded-lg hover:bg-beige-accent/10 transition-all duration-200 text-sm text-center"
-          >
-            View Resume
-          </a>
         </motion.div>
       </div>
 
